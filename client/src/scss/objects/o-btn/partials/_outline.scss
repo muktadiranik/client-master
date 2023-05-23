@@ -1,0 +1,60 @@
+.o-btn {
+  &--outline {
+    background-color: transparent;
+    border: 0.1rem solid $border-color-alt;
+  }
+
+  &--outline-primary {
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover,
+    &:focus {
+      background-color: $hover-color;
+    }
+  }
+
+  &--outline-blue {
+    color: $cesppa-blue;
+    border-color: $cesppa-blue;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $cesppa-blue;
+    }
+  }
+
+  &--outline-red {
+    color: $crimson-red;
+    border-color: $crimson-red;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $crimson-red;
+    }
+  }
+
+  &--outline-purple {
+    color: $purple;
+    border-color: $purple;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $purple;
+    }
+  }
+
+  &--outline-coolgrey {
+    color: $cool-gray;
+    border-color: $cool-gray;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $cool-gray;
+    }
+  }
+}

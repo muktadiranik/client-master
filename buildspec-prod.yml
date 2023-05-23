@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  build:
+    commands:
+      # show git info
+      - git show -s | tee
+      # download .env file from s3
+      - aws s3 cp s3://cesppa-build-files/prod/.env .env
+      # login to ECR
+      - $(aws ecr get-login --no-include-email --registry-ids 720150013645 --region us-west-2)
+      # build containers
+      - docker-compose build
+      # push docker images to ECR
+      - $(aws ecr get-login --no-include-email --registry-ids 312695550912 --region us-east-1)
+      - docker-compose push

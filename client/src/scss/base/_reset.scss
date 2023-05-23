@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5% !important;
+}
+
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+  margin: 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  word-break: break-word;
+
+  &:hover,
+  &:focus {
+    color: $link-color;
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+p,
+a,
+code {
+  word-wrap: break-word;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+[disabled] {
+  cursor: auto;
+}
+
+pre {
+  background-color: $off-white;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  margin: 0;
+}
+
+hr {
+  margin: 0;
+  border-color: $border-color;
+}
+
+textarea {
+  resize: none
+}
+
+textarea:focus {
+  outline: none;
+  resize: vertical;
+  height: auto;
+}
+
+input:invalid {
+  box-shadow: none;
+}
+
+input:focus,
+button:focus,
+input[type='file']:focus,
+input[type='checkbox']:focus,
+input[type='radio']:focus {
+  outline: none;
+}
+
+input[type='checkbox'] {
+  width: 12px;
+  height: 12px;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+code {
+  color: $code-color;
+  font-family: $font-family-monospace;
+}

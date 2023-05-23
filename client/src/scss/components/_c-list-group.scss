@@ -1,0 +1,92 @@
+.c-list-group {
+  & > li,
+  & > li:not(:last-child) {
+    margin: 0;
+  }
+
+  & > li {
+    padding: 1rem 1.5rem;
+
+    @media (min-width: 375px) {
+      padding: 1rem 3rem;
+    }
+  }
+
+  &--bordered {
+    & > li {
+      border: 0.1rem solid $border-color;
+
+      &:not(:first-child) {
+        border-top-width: 0;
+      }
+
+      &:hover {
+        background-color: $off-white;
+      }
+    }
+  }
+
+  &--border-bottom {
+    margin: 0 40px;
+    & > li {
+      border-bottom: 1px solid $border-color;
+      font-size: 11px;
+      padding: 10px 0;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  &--flush {
+    & > li:not(:last-child) {
+      border-bottom: 0.1rem solid $border-color;
+    }
+  }
+
+  &--flush-top {
+    & > li {
+      border-top: 0.1rem solid $border-color;
+    }
+  }
+
+  &--flush-bottom {
+    & > li {
+      border-bottom: 0.1rem solid $border-color;
+    }
+  }
+
+  &--striped-odd {
+    & > li:nth-child(odd) {
+      background-color: $off-white;
+    }
+  }
+
+  &--striped-even {
+    & > li:nth-child(even) {
+      background-color: $off-white;
+    }
+  }
+
+  &--rounded-3 {
+    border-radius: $border-radius;
+
+    & > li:first-child {
+      border-radius: $border-radius 0.3rem 0 0;
+    }
+    & > li:last-child {
+      border-radius: 0 0 0.3rem 0.3rem;
+    }
+  }
+
+  &--alt-border-color {
+    & > li {
+      border-color: $border-color-alt;
+    }
+  }
+
+  &--font-sm {
+    font-size: $fs-sm;
+  }
+}

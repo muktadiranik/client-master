@@ -1,0 +1,38 @@
+@media (min-width: 768px) {
+  .u-d-f-at-768 {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-d-f-below-768 {
+    display: flex;
+  }
+  .u-d-grid-below-768 {
+    display: grid;
+  }
+}
+
+@media (max-width: 415px) {
+  .u-d-grid-below-414 {
+    display: grid;
+  }
+}
+
+@media (min-width: 415px) {
+  .u-d-f-at-415 {
+    display: flex;
+  }
+}
+
+@media (max-width: 499px) {
+  .u-d-grid-below-500 {
+    display: grid;
+  }
+}
+
+@media (min-width: 500px) {
+  .u-d-f-at-500 {
+    display: flex;
+  }
+}

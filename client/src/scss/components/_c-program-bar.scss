@@ -1,0 +1,143 @@
+.c-program-bar {
+  @media (max-width: 767px) {
+    padding: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1rem 3rem;
+  }
+
+  &__logo-box {
+    width: 5em;
+    height: 5em;
+    background-color: $white;
+    border: 0.1rem solid $border-color;
+    padding: 0.8rem;
+    border-radius: $border-radius;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__left {
+    margin: 0 auto;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin-left: 0;
+      text-align: left;
+      display: flex;
+      margin-right: 2rem;
+    }
+  }
+
+  &__info {
+    margin-top: 1.5rem;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+    }
+
+    @media (min-width: 1024px) {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  &__status {
+    margin-left: 20px;
+  }
+
+  &__byline {
+    color: $text-color-alt;
+    font-size: $fs-sm;
+  }
+
+  &__fav {
+    font-size: $fs-lg;
+    margin-left: 24px;
+    cursor: pointer;
+    color: $text-color;
+
+    .fas {
+      color: $yellow;
+    }
+  }
+
+  &__name-container {
+    @media (min-width: 768px) {
+      max-width: 24rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 33rem;
+    }
+  }
+
+  &__name,
+  &__byline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    & > .o-btn {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.c-program-search-bar {
+  width: 220px;
+
+  .o-input {
+    &::-webkit-input-placeholder {
+      font-style: italic;
+    }
+
+    &::-moz-placeholder {
+      font-style: italic;
+    }
+
+    &:-ms-input-placeholder {
+      font-style: italic;
+    }
+
+    &:-moz-placeholder {
+      font-style: italic;
+    }
+  }
+}

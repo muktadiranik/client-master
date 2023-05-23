@@ -1,0 +1,171 @@
+.c-signup-form {
+  width: 100%;
+
+  @media (min-width: 435px) {
+    width: 260px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .fa-variable-icon {
+    font-style: normal;
+    position: absolute;
+    right: 1.5rem;
+    top: 24px;
+    margin-top: -1rem;
+    color: $text-color-alt;
+    font-size: $fs-sm;
+    pointer-events: none;
+    transition: 0.2s ease;
+  }
+
+  &__field {
+    // display different form state icons
+    &.is-correct .fa-variable-icon,
+    &.is-incorrect .fa-variable-icon,
+    &.has-warning .fa-variable-icon,
+    &.is-checking .fa-variable-icon {
+      opacity: 1;
+      visibility: visible;
+
+      &::after {
+        font-family: $font-awesome;
+        font-weight: 300;
+      }
+    }
+
+    .o-text--error,
+    .o-text--warning {
+      display: none;
+    }
+
+    // display different form state messages
+    &.is-incorrect .o-text--error,
+    &.has-warning .o-text--warning {
+      display: block;
+    }
+
+    // correct state
+    &.is-correct .fa-variable-icon {
+      color: $primary-color;
+    }
+    &.is-correct .fa-variable-icon::before {
+      content: '\f00c';
+      font-weight: 400;
+    }
+    &.is-correct .o-input {
+      border-color: $primary-color;
+      background-color: $white;
+    }
+
+    // incorrect state
+    &.is-incorrect .fa-variable-icon {
+      color: $error-color;
+    }
+    &.is-incorrect .fa-variable-icon::before {
+      content: '\f06a';
+      font-weight: 700;
+    }
+    &.is-incorrect .o-input {
+      border-color: $error-color;
+      background-color: $white;
+    }
+
+    // warning state
+    &.has-warning .fa-variable-icon {
+      color: $warning-color;
+    }
+    &.has-warning .fa-variable-icon::before {
+      content: '\f06a';
+      font-weight: 700;
+    }
+    &.has-warning .o-input {
+      border-color: $warning-color;
+      background-color: $white;
+    }
+
+    // checking state
+    &.is-checking .fa-variable-icon {
+      color: $cesppa-color;
+    }
+    &.is-checking .fa-variable-icon::before {
+      content: '\f1ce';
+      font-weight: 400;
+    }
+    &.is-checking .o-input {
+      border-color: $border-color-alt;
+      background-color: $white;
+    }
+  }
+
+  &__field-input-group {
+    position: relative;
+  }
+
+  .o-upload-photo {
+    width: 56px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__header {
+    p {
+      line-height: 21px;
+    }
+  }
+}
+
+.c-signup--ao {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: 90px 18px 0;
+
+  
+  .c-signup-logo {
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    @include mobile {
+      margin-bottom: 60px;
+    }
+  }
+
+  .c-signup-form {
+    margin: 0 auto;
+    width: 100%;
+    @media (min-width: 435px) {
+      width: 310px;
+    }
+
+    &__header {
+      text-align: center;
+      margin-bottom: 32px;
+
+      p {
+        font-size: 15px;
+        font-style: italic;
+
+        span {
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+
+  .c-signup-close {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    top: 43px;
+    right: 64px;
+
+    @include mobile {
+      top: 30px;
+      right: 40px;
+    }
+
+  }
+}

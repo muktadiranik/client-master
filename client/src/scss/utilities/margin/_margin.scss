@@ -1,0 +1,62 @@
+@import './margin-top';
+@import './margin-right';
+@import './margin-bottom';
+@import './margin-left';
+
+.u-m-auto {
+  margin: auto !important;
+}
+
+.u-m-0 {
+  margin: 0 !important;
+}
+
+.u-m-5 {
+  margin: 0.5rem !important;
+}
+
+.u-m-10 {
+  margin: 1rem !important;
+}
+
+.u-m-15 {
+  margin: 1.5rem !important;
+}
+
+.u-m-20 {
+  margin: 2rem !important;
+}
+
+.u-m-25 {
+  margin: 2.5rem !important;
+}
+
+.u-m-30 {
+  margin: 3rem !important;
+}
+
+// Negative margins
+
+.u-nm-5 {
+  margin: -0.5rem !important;
+}
+
+.u-nm-10 {
+  margin: -1rem !important;
+}
+
+.u-nm-15 {
+  margin: -1.5rem !important;
+}
+
+.u-nm-20 {
+  margin: -2rem !important;
+}
+
+.u-nm-25 {
+  margin: -2.5rem !important;
+}
+
+.u-nm-30 {
+  margin: -3rem !important;
+}

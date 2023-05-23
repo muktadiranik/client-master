@@ -1,0 +1,43 @@
+.c-attachment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $fs-xs;
+  color: $text-color-dark;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8px 20px;
+  }
+
+  &__name {
+    font-weight: 500;
+    margin-right: 8px;
+    color: $primary-color;
+  }
+
+  &__size {
+    color: $text-color;
+    font-style: italic;
+  }
+
+  &__actions i {
+    cursor: pointer;
+    transition: 0.15s;
+    color: $text-color;
+    padding: 8px 20px;
+    font-size: $fs-lg;
+
+    &:hover,
+    &:focus {
+      color: $text-color-dark;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.c-history {
+
+    > li {
+        border-bottom: 1px solid $border-color;
+       &:last-child {
+           border-bottom: none;
+       }
+    }
+
+   &__item {
+        padding: 10px 20px;
+       > div {
+           display: flex;
+           align-items: center;
+           margin-bottom: 8px;
+       }
+   }
+
+   &__thumb {
+       width: 36px;
+       height: 36px;
+       border-radius: 50%;
+       overflow: hidden;
+       background-color: #fff;
+       display: flex;
+       align-items: center;
+       margin-right: 14px;
+   }
+
+   &__user {
+       font-size: $fs-xs;
+       font-weight: 500;
+       color: $text-color-dark;
+       margin-bottom: 4px;
+   }
+
+   &__text {
+       font-size: $fs-xs;
+       color: $text-color;
+
+       li {
+           margin-bottom: 4px;
+       }
+   }
+
+   &__date {
+       font-size: $fs-xxs;
+       color: $text-color;
+   }
+
+   &__info {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 100%;
+   }
+}

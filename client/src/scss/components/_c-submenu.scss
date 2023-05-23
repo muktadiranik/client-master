@@ -1,0 +1,249 @@
+.c-submenu-toggler {
+  &.is-open {
+    color: $white;
+    background-color: $primary-color;
+  }
+}
+
+.c-submenu-container {
+  position: relative;
+}
+
+.c-submenu {
+  padding: 1rem 0;
+  background-color: $white;
+  box-shadow: 0px 6px 13px rgba(10, 39, 87, 0.2);
+  border-radius: $border-radius;
+  z-index: $z-index-submenu;
+  position: absolute;
+  top: 100%;
+  font-size: $fs-md;
+  overflow: hidden;
+
+  &--md {
+    width: 212px;
+  }
+
+  &--lg {
+    width: $submenu-width-lg;
+  }
+
+  &--right {
+    right: 0;
+    left: auto;
+  }
+  &--left {
+    left: 0;
+    right: auto;
+  }
+
+  &--large {
+    width: 25rem;
+  }
+
+  &__item {
+    position: relative;
+    transition: $transition-default;
+
+    &.is-disabled {
+      @include disableElement;
+    }
+  }
+
+  &__link,
+  &__text {
+    color: $text-color-dark;
+    font-size: $fs-xs;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: $hover-color;
+      color: $text-color-dark;
+    }
+
+    i {
+      font-size: 13px;
+      margin-right: 10px;
+    }
+
+    .c-switch {
+      margin-left: auto;
+    }
+
+    &-title {
+      font-size: $fs-xs;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    &-title {
+      font-size: $fs-xxs;
+    }
+  }
+
+  &__loadmore {
+    color: $primary-color;
+    font-size: $fs-xs;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $primary-color;
+      background-color: $hover-color;
+    }
+  }
+
+  &__link-text {
+    flex-grow: 1;
+  }
+
+  &__item-title {
+    color: $text-color-dark;
+    font: normal 700 1.4rem/1.5 $primary-font;
+    display: block;
+    padding: 0 2rem;
+  }
+
+  &__item-separator {
+    display: block;
+    margin: 1rem 0;
+    height: 0;
+    border-bottom: 0.1rem solid $border-color;
+  }
+
+  &--fw-400 {
+    .c-submenu__link,
+    .c-submenu__text {
+      font-weight: 400;
+    }
+  }
+
+  &__right-arrow {
+    text-align: right;
+  }
+
+  &__user-media {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.1rem solid $border-color;
+    line-height: 1;
+  }
+
+  &__user-media-username {
+    margin-top: 0.3rem;
+  }
+
+  &__user-media-img {
+    max-width: 6.4rem;
+    border-radius: 0.4rem;
+  }
+
+  &__text-no-results {
+    cursor: auto;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      background-color: inherit;
+    }
+  }
+
+  &--270 {
+    width: 27rem;
+  }
+
+  &--355 {
+    width: 35.5rem;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  &--top-right-arrow {
+    overflow: visible;
+    margin-top: 0.3rem;
+
+    &::before {
+      content: '';
+      width: 1.2rem;
+      height: 1.2rem;
+      background-color: $white;
+      position: absolute;
+      top: -0.65rem;
+      right: 1.8rem;
+      transform: rotate(45deg);
+      border-left: 0.1rem solid $border-color;
+      border-top: 0.1rem solid $border-color;
+    }
+  }
+
+  &--for-user {
+    right: -0.8rem;
+  }
+
+  &--for-notification {
+    right: -0.3rem;
+    max-height: 300px;
+    overflow-y: auto;
+    @include cesppa-scroll-bar;
+    padding-bottom: 0;
+    width: 265px;
+
+    .c-submenu {
+      &__link {
+        &-title {
+          font-size: 11px;
+
+          &::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            margin-right: 10px;
+            background-color: $red;
+            border-radius: 50%;
+            display: inline-block;
+          }
+        }
+        &-text {
+          font-size: $fs-xxs;
+          color: $text-color;
+          opacity: 0.6;
+        }
+      }
+      
+    }
+    
+  }
+
+  &--for-edit-comment {
+    right: -1.8rem;
+    top: 20px;
+  }
+
+  &--for-vulnerability-type {
+    height: 25rem;
+    max-height: 40rem;
+    overflow-y: auto;
+    @include cesppa-scroll-bar;
+  }
+
+  &.programs-menu {
+    min-height: 10rem;
+    max-height: 20rem;
+    overflow-y: auto;
+    @include cesppa-scroll-bar;
+  }
+}

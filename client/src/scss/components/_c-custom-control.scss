@@ -1,0 +1,154 @@
+.c-custom-control {
+  display: flex;
+
+  &--inline {
+    display: inline-flex;
+    margin-right: 1.6rem;
+  }
+
+  &--for-input {
+    height: 4rem;
+    align-items: center;
+  }
+
+  &--for-input-lg {
+    height: 5rem;
+    align-items: center;
+  }
+
+  input {
+    @extend .u-hide-input;
+
+    &:checked ~ label {
+      &::before {
+        border-color: $primary-color;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:focus ~ label {
+      &::before {
+        box-shadow: 0 0 0 0.3rem rgba($primary-color, 0.25);
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    margin: 0;
+    display: inline-flex;
+    cursor: pointer;
+    padding-left: 2.4rem;
+    line-height: 1.6rem;
+    transition: $transition-default;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      pointer-events: none;
+      transition: 0.15s ease-in-out;
+    }
+
+    &::before {
+      width: 1.6rem;
+      height: 1.6rem;
+      background-color: $white;
+      border: 0.1rem solid $border-color;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: $primary-color;
+      position: absolute;
+      left: 0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+  }
+
+  &--checkbox {
+
+    input {
+      width: 12px;
+      height: 12px;
+    }
+    label::before,
+    label::after {
+      border-radius: $border-radius;
+    }
+
+    label::after {
+      width: 1.6rem;
+      height: 1.6rem;
+      background-color: transparent;
+      content: '\f00c';
+      font-family: $font-awesome;
+      color: $white;
+      font-size: $fs-md;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &--radio {
+    label::before,
+    label::after {
+      border-radius: 50%;
+    }
+
+    label::after {
+      width: 19px;
+      height: 19px;
+      background-color: white;
+      width: 8px;
+      height: 8px;
+      left: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $border-color;
+    }
+    input:checked ~ label::before {
+      background-color: $primary-color;
+      border: none;
+    }
+  }
+
+  &--style-2 {
+    label::before {
+      border-color: white;
+    }
+
+    input {
+      &:checked ~ label {
+        &::before {
+          border-color: white;
+          background-color: white;
+        }
+
+        &::after {
+          background-color: $primary-color;
+        }
+      }
+
+      &:focus ~ label {
+        &::before {
+          box-shadow: 0 0 0 0.3rem rgba(white, 0.3);
+        }
+      }
+    }
+  }
+}

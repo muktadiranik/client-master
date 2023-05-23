@@ -1,0 +1,51 @@
+.o-text {
+  font-family: $primary-font;
+
+  &--700 {
+    font-weight: 700;
+  }
+
+  &--500 {
+    font-weight: 500;
+  }
+
+  &--400 {
+    font-weight: 400;
+  }
+
+  &--lg {
+    font-size: $fs-lg;
+  }
+
+  &--sm {
+    font-size: $fs-sm;
+  }
+
+  &--xsm {
+    font-size: $fs-xs;
+  }
+
+  &--error {
+    color: $error-color;
+  }
+
+  &--warning {
+    color: $warning-color;
+  }
+
+  &--mute {
+    color: $text-color-alt;
+  }
+
+  &--dark {
+    color: $text-color-dark;
+    &:hover {
+      color: $text-color-dark;
+    }
+  }
+
+  &--grey,
+  &--gray {
+    color: $text-color
+  }
+}

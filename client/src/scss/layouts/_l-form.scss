@@ -1,0 +1,15 @@
+.l-form {
+  &__group-inline {
+    display: grid;
+    align-items: start;
+    grid-gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 22rem 1fr;
+    }
+
+    @media (min-width: 1280px) {
+      grid-template-columns: 30rem 1fr;
+    }
+  }
+}

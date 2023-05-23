@@ -1,0 +1,28 @@
+.o-dropzone {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: $z-index-dropzone;
+  background-color: rgba($white, 0.9);
+  border: 0.5rem solid $cesppa-blue;
+  border-style: dashed;
+  display: flex;
+  cursor: pointer;
+
+  &__inner {
+    margin: auto;
+    text-align: center;
+    color: $cesppa-blue;
+  }
+
+  &__text {
+    color: $cesppa-blue;
+    font: normal 700 2rem/1.5 $primary-font;
+  }
+
+  &__icon {
+    font-size: 4rem;
+  }
+}

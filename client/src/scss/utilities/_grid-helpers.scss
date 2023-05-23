@@ -1,0 +1,26 @@
+// grid gap
+.u-grid-gap-10-20 {
+  grid-gap: 1rem 2rem;
+}
+
+// grid row gap
+.u-grid-row-gap-10 {
+  row-gap: 1rem;
+}
+
+.u-grid-row-gap-15 {
+  row-gap: 1.5rem;
+}
+
+.u-grid-row-gap-20 {
+  row-gap: 2rem;
+}
+
+// grid alignment
+.u-jc-end {
+  justify-content: end;
+}
+
+.u-ai-stretch {
+  align-items: stretch;
+}

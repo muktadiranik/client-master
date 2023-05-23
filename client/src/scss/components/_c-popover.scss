@@ -1,0 +1,163 @@
+.c-popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  width: 26rem;
+  z-index: $z-index-popover;
+
+  &::before {
+    content: '';
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: $white;
+    position: absolute;
+    top: -0.7rem;
+    border-left: 0.1rem solid $border-color;
+    border-top: 0.1rem solid $border-color;
+  }
+
+  &--default {
+    max-height: 40rem;
+    overflow-y: auto;
+  }
+
+  &--center {
+    left: 50%;
+    transform: translateX(-50%);
+
+    &::before {
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &--no-arrow::before {
+    display: none;
+  }
+
+  &--right {
+    left: auto;
+    right: 0;
+  }
+
+  &--right-arrow {
+    left: auto;
+    right: -2rem;
+
+    &::before {
+      left: auto;
+      right: 2rem;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &--for-link-submission {
+    margin-top: 1rem;
+    right: -1.2rem;
+  }
+
+  &--for-related-findings {
+    top: auto;
+    bottom: 100%;
+  }
+
+  @media (min-width: 375px) {
+    width: 30rem;
+  }
+
+  &--width-365 {
+    @media (min-width: 768px) {
+      width: 36.5rem;
+    }
+  }
+
+  &__header {
+    padding: 1rem 1.5rem;
+    border-bottom: 0.1rem solid $border-color;
+
+    @media (min-width: 375px) {
+      padding: 1rem 3rem;
+    }
+  }
+
+  &__body {
+    padding: 1.5rem;
+
+    @media (min-width: 375px) {
+      padding: 3rem;
+    }
+  }
+
+  &__footer {
+    padding: 1rem 3rem;
+    border-top: 0.1rem solid $border-color;
+  }
+
+  &__submissions-list,
+  &__findings-list {
+    max-height: 20rem;
+    overflow-y: auto;
+
+    li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    [type='radio'] {
+      & + label {
+        display: block;
+        padding: 1rem;
+        border: 0.1rem solid $border-color-alt;
+        border-radius: $border-radius;
+        width: 100%;
+        background-color: $white;
+        padding-left: 3.4rem;
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 1.4rem;
+          height: 1.4rem;
+          border: 0.1rem solid $border-color-alt;
+          background-color: transparent;
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 50%;
+        }
+
+        &::after {
+          content: '';
+          width: 0.8rem;
+          height: 0.8rem;
+          border: 0;
+          background-color: $primary-color;
+          left: 1.3rem;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          position: absolute;
+          display: none;
+        }
+
+        &:hover {
+          background-color: $off-white;
+        }
+      }
+
+      &:checked {
+        & + label {
+          border-color: $primary-color;
+          background-color: $off-white;
+
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

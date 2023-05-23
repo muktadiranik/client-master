@@ -1,0 +1,18 @@
+ul.c-breadcrumb {
+  display: inline-flex;
+
+  li.has-child:not(:last-child)::after {
+    content: '\f105';
+    font-family: $font-awesome;
+    margin: 0 1rem;
+    font-size: $fs-xxs;
+  }
+
+  li {
+    color: $text-color-alt;
+    font-size: $fs-sm;
+    // position: relative;
+    // padding-right: 1rem;
+    // margin-right: 1rem;
+  }
+}

@@ -1,0 +1,301 @@
+.c-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .c-badge {
+    margin: 0.5rem;
+    &--vuln {
+      font-size: $fs-xs;
+      line-height: $fs-md;
+      color: $text-color;
+      display: flex;
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:before {
+        content: '\f02b';
+        font-family: $font-awesome;
+        font-weight: 300;
+        margin: 0 10px 0 0;
+      }
+    }
+    &--vuln-type {
+      background: $hover-color;
+      border-radius: 3px;
+      color: $primary-color;
+      display: inline-block;
+      padding: 2px 6px;
+      position: relative;
+      text-decoration: none;
+      -webkit-transition: color 0.2s;
+      border: 1px solid $primary-color;
+      white-space: nowrap;
+      margin-top: 8px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.c-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  font-size: $fs-badge;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+
+  &--default {
+    color: $text-color;
+    background-color: $severity-none;
+    text-transform: capitalize;
+    font-size: $fs-xs;
+    height: 20px;
+    width: auto;
+    padding: 4px 6px;
+  
+    > span {
+      font-weight: 400;
+    }
+  }
+
+  &--program-status {
+    color: $text-color;
+    background-color: #F3F4F6;
+    text-transform: capitalize;
+    font-size: $fs-xs;
+    height: 20px;
+    width: auto;
+    padding: 4px 6px;
+  }
+
+  &--severity-none {
+    background-color: $severity-none;
+  }
+
+  &--severity-critical,
+  &--status-rejected {
+    background-color: $severity-critical;
+  }
+
+  &--severity-high {
+    background-color: $severity-high;
+  }
+
+  &--severity-medium,
+  &--status-in-review,
+  &--status-validating {
+    background-color: $severity-medium;
+  }
+
+  &--severity-low {
+    background-color: $severity-low;
+  }
+
+  &--severity-informational,
+  &--severity-info,
+  &--status-accepted,
+  &--status-remediated {
+    background-color: $severity-info;
+  }
+
+  &--status-duplicate {
+    color: $white;
+    background-color: rgba($severity-info, 0.7);
+  }
+
+  &--status {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: $fs-xs;
+    width: auto;
+    padding: 2px 6px;
+    background-color: transparent;
+    border-radius: $border-radius;
+    word-break: normal;
+
+    > span {
+      font-weight: 400;
+    }
+    
+    &-new,
+    &-new-rediscovered {
+      border: 1px solid $status-new;
+      color: $status-new;
+    }
+
+    &-in-progress,
+    &-in-review {
+      border: 1px solid $text-color;
+      color: $text-color;
+    }
+
+    &-closed,
+    &-closed-risk-accepted,
+    &-closed-remediated,
+    &-closed-verified {
+      border: 1px solid $status-closed;
+      color: $status-closed;
+    }
+
+    &-accepted {
+      border: 1px solid $submission-accepted;
+      color: $submission-accepted;
+    }
+
+    &-rejected {
+      border: 1px solid $submission-rejected;
+      color: $submission-rejected;
+    }
+
+    &-duplicate {
+      border: 1px solid $submission-duplicate;
+      color: $submission-duplicate;
+    }
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  &--primary-light {
+    @extend .c-badge--primary;
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+  }
+
+  &--lg {
+    height: 2.2rem;
+    padding: 0 1.5rem;
+
+    &-pill {
+      border-radius: 1.1rem;
+    }
+  }
+
+  &--long {
+    min-width: 5rem;
+    justify-content: center;
+  }
+
+  &--btn {
+    height: 4rem;
+    padding: 0 2rem;
+    font-size: $fs-sm;
+
+    &-pill {
+      border-radius: 2rem;
+    }
+  }
+
+  &--btn-sm {
+    height: 3.2rem;
+    padding: 0 1.5rem;
+
+    &-pill {
+      border-radius: 1.6rem;
+    }
+  }
+
+  &--btn-xs {
+    height: 2.6rem;
+    padding: 0 1.5rem;
+
+    &-pill {
+      border-radius: 1.3rem;
+    }
+  }
+
+  &--integration {
+    border-radius: 50px;
+    background-color: $gray1;
+    font-size: 11px;
+    padding: 6px 12px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    min-width: 165px;
+
+    &--enabled {
+      background-color: rgba(0, 77, 207, 0.2);
+      border: 1px solid $primary-color;
+    }
+  }
+
+  &--payment {
+    font-size: $fs-xxs;
+
+    &-paid {
+      color: $paid;
+
+      &:before {
+        content: '\f058';
+        font-family: $font-awesome;
+        font-weight: 400;
+        margin-right: 4px;
+      }
+    }
+    &-pending {
+      color: $pending;
+
+      &:before {
+        content: '\f017';
+        font-family: $font-awesome;
+        font-weight: 500;
+        margin-right: 4px;
+      }
+    }
+  }
+  &--frozen {
+    color: $primary-color;
+    background-color: $frozen;
+    text-transform: none;
+    height: 23px;
+    &:before {
+      content: '\f2dc';
+      font-family: $font-awesome;
+      font-weight: 300;
+      font-size: $fs-xs;
+      margin-right: 4px;
+    }
+  }
+  &--inactive {
+    color: transparentize($text-color, 0.2);
+    border: 1px solid transparentize($text-color, 0.7);
+    text-transform: none;
+    height: 23px;
+    &:before {
+      content: '\f070';
+      font-family: $font-awesome;
+      font-weight: 300;
+      font-size: $fs-xs;
+      margin-right: 4px;
+    }
+  }
+  &--private {
+    color: $text-color;
+    background-color: $private;
+    text-transform: none;
+    height: 23px;
+    &:before {
+      content: '\f30d';
+      font-family: $font-awesome;
+      font-weight: 300;
+      font-size: $fs-xs;
+      margin-right: 4px;
+    }
+  }
+}

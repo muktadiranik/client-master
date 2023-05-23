@@ -1,0 +1,86 @@
+.markdown-editor {
+  .editor-preview-active,
+  .editor-preview-active-side {
+    top: 120px;
+    padding: 15px;
+  }
+
+  .editor-toolbar {
+    background-color: $secondary-bg;
+
+    &.fullscreen {
+      top: 60px;
+    }
+
+    &::after {
+      margin-top: 3.5px;
+    }
+
+    &::before {
+      margin-bottom: 3.5px;
+    }
+
+    a {
+      transition: 0.15s;
+      font-size: $fs-xs;
+
+      &:hover {
+        background-color: #C9D1D9;
+        border: none;
+      }
+    }
+
+    &:hover {
+      a {
+        color: $text-color !important;
+      }
+    }
+  }
+
+  .CodeMirror,
+  .editor-toolbar,
+  .editor-toolbar a.active,
+  .editor-toolbar a:hover {
+    border-color: $border-color;
+  }
+
+  .CodeMirror {
+    color: $text-color-dark;
+    font-size: $fs-xs;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+    }
+
+    &.CodeMirror-fullscreen {
+      top: 120px;
+    }
+
+    &,
+    .CodeMirror-scroll {
+      min-height: 350px;
+    }
+
+    .CodeMirror-code {
+      .cm-header-1,
+      .cm-header-2,
+      .cm-header-3,
+      .cm-header-4,
+      .cm-header-5,
+      .cm-header-6 {
+        font-size: $fs-xs;
+        font-weight: 500;
+        color: $text-color-dark;
+        word-break: break-all;
+      }
+    }
+    .CodeMirror-vscrollbar {
+      @include cesppa-scroll-bar;
+    }
+  }
+
+  .CodeMirror-wrap pre {
+    word-break: break-all;
+  }
+}

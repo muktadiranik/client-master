@@ -1,0 +1,78 @@
+.c-filter-bar {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    width: auto;
+  }
+
+  label {
+    color: $text-color-alt;
+    font: normal 400 1.4rem/2rem $primary-font;
+    white-space: nowrap;
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    .c-box__header & {
+      box-shadow: none;
+      border: 0.1rem solid $border-color;
+    }
+  }
+
+  li {
+    padding: 0.5rem 1.5rem;
+    min-height: $height-xs;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    min-width: 10rem;
+    white-space: nowrap;
+    justify-content: center;
+    color: $text-color;
+    font: normal 400 1.4rem/1.8rem $primary-font;
+    transition: 0.15s;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+    }
+
+    .c-box__header &:hover,
+    .c-box__header &:focus {
+      background-color: $off-white;
+    }
+  }
+
+  li:not(:last-child) {
+    border-bottom: 0.1rem solid $border-color;
+
+    @media (min-width: 768px) {
+      border-bottom: 0;
+      border-right: 0.1rem solid $border-color;
+    }
+  }
+
+  li.is-active {
+    color: $primary-color;
+    background-color: $white;
+
+    .c-box__header & {
+      background-color: $off-white;
+    }
+  }
+}

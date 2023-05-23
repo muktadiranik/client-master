@@ -1,0 +1,220 @@
+.c-navbar {
+
+  &__brand {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+  }
+
+  &__brand-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__brand-logo-icon {
+    height: 26px;
+    margin-right: 1.5rem;
+  }
+
+  &__brand-logo-text {
+    color: $white;
+    font-weight: 700;
+    font-size: $fs-md;
+    font-family: $primary-font;
+    // transition: .15s;
+  }
+
+  &__menu-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__menu-list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__menu-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-link {
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+    color: $text-color;
+    font-size: $fs-md;
+    font-weight: 400;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+
+    i.fa-angle-right {
+      transition: $transition-default;
+    }
+
+    &.is-active i.fa-angle-right {
+      transform: rotate(90deg);
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+
+  &__menu-title {
+    display: flex;
+    padding: 1rem 0.7rem;
+    text-decoration: none;
+    color: $text-color-alt;
+    font: normal 600 1.4rem/1.5 $primary-font;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__menu-link-program {
+    .c-navbat-link-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__menu-link-icon {
+    font-size: $fs-lg;
+    min-width: 3.5rem;
+    text-align: center;
+    margin-right: 1.5rem;
+  }
+
+  &__menu-link-icon-arrow {
+    line-height: 1;
+    margin-left: auto;
+  }
+
+  &__menu-item--active {
+    position: relative;
+    & > .c-navbar__menu-link,
+    .router-link-exact-active {
+      font-weight: 500;
+      color: $primary-color;
+    }
+
+    & > .c-navbar__menu-link::before {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &::after {
+      content: '';
+      background: $primary-color;
+      width: 100%;
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+    }
+  }
+
+  &__submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-default ease-out;
+
+    .c-navbar__menu-link {
+      padding-left: 2.5rem;
+    }
+
+    &.is-visible {
+      max-height: 500px;
+      transition: max-height $transition-default ease-in;
+    }
+
+    .c-navbar__menu-link {
+      font: normal 400 1.2rem/1.5 $primary-font;
+      padding: 0.5rem 1.5rem 0.5rem 2.5rem;
+    }
+  }
+
+  &--enabled {
+    .c-navbar {
+      transform: translateX(0);
+    }
+  }
+
+  &--short {
+    .c-navbar {
+      width: $sidebar-short-width;
+    }
+
+    .c-site-main,
+    .c-site-footer {
+      padding-left: $sidebar-short-width;
+    }
+
+    .c-navbar__menu-link-text,
+    .c-navbar__brand-logo-text {
+      opacity: 0;
+    }
+  }
+
+  &--short .c-navbar:hover {
+    width: $sidebar-width;
+
+    .c-navbar__menu-link-text,
+    .c-navbar__brand-logo-text {
+      opacity: 1;
+    }
+  }
+
+  &-desktop {
+    @media (max-width: 1023px) {
+      display: none;
+    }
+    display: block;
+  }
+
+  &-mobile {
+    display: none;
+    @media (min-width: 1024px) {
+      display: none;
+    }
+    background-color: $white;
+    .c-navbar {
+      &__menu-list {
+        flex-direction: column;
+      }
+
+    }
+  }
+
+  &--enabled {
+    @media (max-width: 1023px) {
+      .c-navbar-mobile {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 99;
+      }
+    }
+  }
+}

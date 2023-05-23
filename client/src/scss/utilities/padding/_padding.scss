@@ -1,0 +1,56 @@
+@import './padding-top';
+@import './padding-right';
+@import './padding-bottom';
+@import './padding-left';
+
+.u-p-auto {
+  padding: auto;
+}
+
+.u-p-0 {
+  padding: 0 !important;
+}
+
+.u-p-5 {
+  padding: 0.5rem;
+}
+
+.u-p-10 {
+  padding: 1rem;
+}
+
+.u-p-15 {
+  padding: 1.5rem;
+}
+
+.u-p-16 {
+  padding: 16px;
+}
+
+.u-p-20 {
+  padding: 20px;
+}
+
+.u-p-25 {
+  padding: 2.5rem;
+}
+
+.u-p-30 {
+  padding: 3rem;
+}
+
+.u-p-35 {
+  padding: 3.5rem;
+}
+
+.u-p-40 {
+  padding: 4rem;
+}
+
+.u-p-45 {
+  padding: 4.5rem;
+}
+
+.u-p-50 {
+  padding: 5rem;
+}

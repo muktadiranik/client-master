@@ -1,0 +1,842 @@
+.c-datatable {
+  font-size: $fs-xs;
+  border: 1px solid $border-color;
+  background-color: $white;
+  border-radius: $border-radius;
+
+  &--nowrap {
+    white-space: nowrap;
+  }
+
+  &__responsive {
+    overflow: auto;
+    min-height: 8.1rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &--subtable {
+    box-shadow: 0 0 15px 1px rgba(113, 106, 202, 0.1);
+
+    .c-datatable__body .c-datatable__row:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &--subtable {
+    border: 1px solid $border-color;
+
+    .c-datatable__head {
+      background-color: white;
+      border-bottom: 1px solid $border-color;
+    }
+
+  }
+
+  &__row {
+    border-bottom: 1px solid $border-color;
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  &--submissions {
+
+    .c-datatable__head {
+      .c-datatable__cell {
+        width: auto;
+      }
+    }
+  }
+
+  &__cell {
+    font-size: $fs-xs;
+    padding: 12px 16px;
+    text-align: left;
+    box-sizing: content-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--created {
+      width: 64px;
+    }
+
+    &--status {
+      width: 150px;
+    }
+
+    &--title {
+      width: 350px;
+      white-space: break-spaces;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: $fs-sm;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &--severity {
+      width: 70px;
+      overflow: hidden;
+      max-width: 70px;
+    }
+
+    &--program {
+      width: 170px;
+      overflow: hidden;
+      font-size: $fs-xs;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &--status {
+      width: 70px;
+      overflow: hidden;
+      max-width: 70px;
+    }
+
+    &--created {
+      width: 70px;
+      overflow: hidden;
+      max-width: 70px;
+      font-size: $fs-xs;
+    }
+
+
+    &--bounty {
+      width: 70px;
+      overflow: hidden;
+      max-width: 70px;
+    }
+
+    &--program {
+      &:hover {
+        span {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &--type {
+      width: 250px;
+    }
+
+    &--thumb {
+      background: $secondary-bg;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      margin-right: 11px;
+      display: inline-block;
+      vertical-align: middle;
+      justify-content: center;
+
+      i {
+        color: $text-color-alt;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__sort-icon {
+    cursor: pointer;
+    &:after {
+      content: '\f0dc';
+      font-family: $font-awesome;
+      font-weight: 300;
+      font-size: $fs-xs;
+      margin-left: 8px;
+    }
+
+    &:hover {
+      &::after {
+        content: '\f0dc';
+        font-family: $font-awesome;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .sort-icon-selected {
+    &::after {
+      content: '\f0dc';
+      font-family: $font-awesome;
+      font-weight: bold;
+    }
+  }
+
+  &__cell--toggle {
+    width: 1.4rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__head {
+    background-color: $secondary-bg;
+    padding: 10px 20px;
+
+    .c-datatable__cell {
+      color: $text-color;
+      font-size: $fs-sm;
+      font-weight: 500;
+      padding: 10px 16px;
+
+      &--title {
+        &:hover {
+          text-decoration: none;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  &__foot {
+    border-top: 0.1rem solid $border-color;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+  }
+
+  &__title {
+    display: flex;
+    color: $text-color-dark;
+    font: normal 700 1.4rem/1.3 $primary-font;
+
+    & > a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__meta-list {
+    display: inline-block;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  &__meta {
+    display: inline-block;
+    align-items: center;
+    font: normal 400 1.2rem/1 $primary-font;
+    padding: 0.25rem;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__meta-key,
+  &__meta-value {
+    color: $cool-gray;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+  }
+
+  &__meta-key {
+    color: $text-color-alt;
+  }
+
+  &__pager,
+  &__pager-nav,
+  &__pager-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__title-pending {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    a {
+      cursor: pointer;
+      color: $text-color;
+      font-weight: bold;
+    }
+  }
+
+  &__transaction-date {
+    font-size: $fs-sm;
+  }
+
+  &__remove {
+    cursor: pointer;
+    font-size: $fs-xl;
+    color: $error-color;
+  }
+
+  &__pager {
+    justify-content: flex-end;
+    margin-top: 16px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__pager-info {
+    @media (max-width: 767px) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__pager-nav {
+    margin: -0.25rem;
+
+    li {
+      padding: 0.25rem;
+    }
+  }
+
+  &__pager-link {
+    width: 18px;
+    height: 18px;
+    color: $text-color-dark;
+    font-size: $fs-xs;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    text-decoration: none;
+    transition: 0.15s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &--active {
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+
+    &--active {
+      color: $white;
+      background-color: $primary-color;
+    }
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      background-color: $hover-color;
+      color: $text-color-dark;
+    }
+
+    &--next {
+      color: $text-color-dark;
+
+      &:hover {
+        background: $hover-color;
+        color: $text-color-dark;
+      }
+    }
+
+    &--disabled {
+      opacity: 0.3;
+      color: $text-color-dark;
+      cursor: initial;
+
+      &:hover {
+        opacity: 0.3;
+        color: $text-color-dark;
+      }
+    }
+  }
+
+  &__pager-detail {
+    color: $text-color-alt;
+    font: normal 400 1.4rem/1 $primary-font;
+  }
+
+  &__col {
+    &-created,
+    &-amount,
+    &-date,
+    &-address {
+      white-space: nowrap;
+    }
+
+    &-pay-now {
+      width: 9.4rem;
+      margin-left: auto;
+    }
+
+    &-toggle {
+      &.expanded i {
+        transform: rotate(90deg);
+      }
+    }
+
+    &-submission {
+      max-width: 55rem;
+      overflow: hidden;
+    }
+  }
+
+  &--jira {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+
+    .c-datatable__head {
+      background-color: white;
+      border-bottom: 1px solid $border-color;
+
+      .c-datatable__cell {
+        font-size: 13px;
+        padding: 10px 20px;
+      }
+    }
+
+    .c-datatable__body {
+      .c-datatable__cell {
+        font-size: $fs-xs;
+        padding: 12px 20px;
+      }
+    }
+
+    .c-datatable__pager {
+      margin-top: 0;
+      padding: 10px 20px;
+    }
+  }
+
+  &--custom {
+      * {
+        border-color: $border-color !important;
+      }
+
+      .vgt-inner-wrap {
+        padding-bottom: 16px;
+      }
+
+      .vgt-checkbox-col {
+        border-bottom: 1px solid $border-color;
+        border-right: none !important;
+      }
+    .vgt-table {
+        border: none;
+    
+      thead {
+        .vgt-checkbox-col {
+          background: white;
+        }
+
+        th {
+          border-top: 1px solid $border-color;
+        }
+      }
+
+      th {
+        background: white;
+      }
+
+      td {
+        vertical-align: middle;
+      }
+    }
+
+    .vgt-global-search {
+      background: white;
+      border: none;
+      width: 50%;
+      margin-bottom: 14px;
+    }
+
+    .vgt-global-search__actions {
+      background-color: white;
+    }
+    .vgt-table th.line-numbers, .vgt-table th.vgt-checkbox-col {
+      background: white;
+    }
+    tbody {
+      .c-datatable__cell {
+        max-width: 80%;
+        display: inline-block;
+
+        &--txt-wrap {
+          max-width: 360px;
+          white-space: initial;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .vgt-right-align {
+      text-align: left;
+    }
+
+    .vgt-table th.sortable {
+      &:before {
+        right: 16px;
+      }
+      &:after {
+        right: 16px;
+      }
+    }
+    .vgt-wrap__footer.vgt-clearfix {
+      background: white;
+    }
+
+    .vgt-input {
+      display: block;
+      width: 100%;
+      height: $height-sm;
+      border: 1px solid $border-color;
+      background-color: $white;
+      border-radius: $border-radius;
+      padding: 8px 12px;
+      color: $text-color-dark;
+      font-size: $fs-xs;
+      font-family: $primary-font;
+      line-height: initial;
+      transition: 0.15s;
+      line-height: initial;
+      @include placeholder-styles($text-color-alt, $fs-xs);
+      appearance: none;
+      -webkit-appearance: none;
+      padding-left: 37px;
+    
+      &:hover {
+        border-color: $primary-color !important;
+        background-color: $input-hover;
+      }
+    
+      &:focus {
+        outline: none;
+        border-color: $primary-color !important;
+        background-color: $white;
+      }
+
+    }
+    .magnifying-glass {
+      display: none !important;
+    }
+
+    .vgt-global-search__input {
+      padding-left: 20px;
+    }
+
+    .input__icon {
+      padding-left: 28px;
+      padding-top: 8px;
+      position: relative;
+      &:before {
+        content: '\f002';
+        font-family: $font-awesome;
+        font-weight: 300;
+        position: absolute;
+        font-size: 18px;
+        color: $text-color;
+      }
+    }
+
+  }
+  &--vgt {
+    table {
+      width: 100%;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      border-collapse: collapse;
+
+      thead {
+        background-color: $secondary-bg;
+
+        th {
+          padding: 10px 16px;
+          font-size: $fs-xs;
+          font-weight: 500;
+
+          &:nth-child(2) {
+            cursor: pointer;
+            button {
+              display: inline-flex;
+              opacity: 0;
+              position: absolute;
+              cursor: pointer;
+              height: 14px;
+            }
+            &:after {
+              content: '\f0dc';
+              font-family: $font-awesome;
+              font-weight: 300;
+              font-size: $fs-xs;
+              margin-left: 8px;
+            }
+        
+            &:hover {
+              &::after {
+                content: '\f0dc';
+                font-family: $font-awesome;
+                font-weight: bold;
+              }
+            }
+            
+          }
+
+          button {
+            display: none;
+          }
+        }
+      }
+
+      tbody {
+
+        th, td {
+          font-size: 11px;
+          padding: 12px 16px;
+          border-bottom: 1px solid $border-color;
+
+          .cell--details {
+            color: $primary-color;
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+        .c-datatable__cell {
+          &--approve {
+            font-size: $fs-lg;
+            color: $green;
+            cursor: pointer;
+          }
+          &--decline {
+            font-size: $fs-lg;
+            color: $red;
+            cursor: pointer;
+          }
+        }
+
+        td {
+          &:nth-child(6) {
+            padding: 0 16px;
+          }
+        }
+      }
+      
+      td, th {
+        color: $text-color;
+        text-align: left;
+        input[type='checkbox'] {
+          cursor: pointer;
+        }
+
+        &:first-child {
+          width: 12px;
+          padding-right: 8px;
+        }
+        &:nth-child(2){
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+}
+
+.c-datatable--scroll {
+  .c-datatable__table,
+  .c-datatable__head,
+  .c-datatable__body,
+  .c-datatable__foot,
+  .c-datatable__row {
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  .c-datatable__body {
+    @media (min-width: 768px) {
+      max-height: 30rem;
+      overflow-y: auto;
+      @include cesppa-scroll-bar;
+    }
+  }
+
+  .c-datatable__col-submission {
+    @media (min-width: 768px) {
+      width: 30.6rem;
+    }
+
+    @media (min-width: 992px) {
+      width: 48.6rem;
+    }
+
+    @media (min-width: 1200px) {
+      width: 68.6rem;
+    }
+  }
+
+  .c-datatable__col-created {
+    @media (min-width: 768px) {
+      width: 7.8rem;
+    }
+  }
+
+  .c-datatable__col-status {
+    @media (min-width: 768px) {
+      width: 6.2rem;
+    }
+  }
+
+  .c-datatable__col-severity {
+    @media (min-width: 768px) {
+      width: 6.7rem;
+    }
+  }
+
+  .c-datatable__col-bounty {
+    @media (min-width: 768px) {
+      width: 6rem;
+    }
+  }
+}
+
+.c-datatable--pending-transactions {
+  .c-datatable__cell {
+    white-space: nowrap;
+  }
+}
+
+.c-datatable--choose-transactions {
+  .c-datatable__col-check {
+    width: 1.4rem;
+    color: $text-color-dark;
+  }
+
+  .c-datatable__col-description {
+    min-width: 30rem;
+  }
+
+  .c-datatable__col-program {
+    min-width: 12rem;
+  }
+
+  .c-datatable__row.inactive {
+    [class^='c-datatable__col'] {
+      color: rgba($text-color-dark, 0.4);
+    }
+
+    .c-datatable__col-check {
+      color: $text-color-alt;
+    }
+  }
+}
+
+.c-datatable--historical-transactions {
+  .c-datatable {
+    &__col-toggle {
+      @media (min-width: 1280px) {
+        width: 1rem;
+      }
+    }
+
+    &__col-created {
+      @media (min-width: 1280px) {
+        width: 10rem;
+      }
+    }
+
+    &__col-transaction {
+      @media (min-width: 1280px) {
+        width: 40rem;
+      }
+    }
+
+    &__col-amount {
+      @media (min-width: 1280px) {
+        width: 5rem;
+      }
+    }
+
+    &__col-payment-method {
+      @media (min-width: 1280px) {
+        width: 11rem;
+      }
+    }
+  }
+
+  .c-datatable__info {
+    @media (min-width: 1280px) {
+      min-width: auto;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 1280px) {
+      min-width: 28rem;
+    }
+  }
+
+  .c-datatable--subtable .c-datatable__col-transaction {
+    width: auto;
+  }
+}
+
+.c-datatable--payment-details {
+  .c-datatable {
+    &__col-transaction {
+      min-width: 28rem;
+      max-width: 60rem;
+    }
+
+    &__col-program {
+      min-width: 10rem;
+    }
+  }
+}
+
+.c-datatable__col-payment-method {
+
+  &--paypal {
+    span {
+      color: $text-color-dark;
+      font-size: $fs-xs;
+    }
+    i {
+      color: $paypal;
+      font-size: $fs-md;
+    }
+  }
+  &--bitcoin {
+    span {
+      color: $text-color-dark;
+      font-size: $fs-xs;
+    }
+    i {
+      color: $bitcoin;
+      font-size: 13px;
+    }
+  }
+}

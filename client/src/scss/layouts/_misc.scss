@@ -1,0 +1,299 @@
+.l-programs-grid {
+  display: grid;
+  grid-gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.l-program-topbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
+
+  &__search {
+    flex-grow: 1;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+
+  &__filter {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: auto;
+    }
+  }
+}
+
+.ao-search-margin {
+  @media (min-width: 768px) {
+    margin-right: 0rem;
+  }
+}
+
+.l-program-details,
+.l-dashboard-page {
+  display: grid;
+  grid-gap: 2rem;
+  align-items: start;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr minmax(28rem, 30rem);
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: 1fr minmax(18rem, 18rem);
+  }
+}
+
+// .l-account-settings,
+.l-payment-create,
+.l-user-transactions,
+.l-program-transactions,
+.l-payment-details,
+.l-edit-transaction,
+.l-create-transaction {
+  display: grid;
+  align-items: start;
+  grid-gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: minmax(28rem, 30rem) 1fr;
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: minmax(30rem, 36rem) 1fr;
+  }
+}
+
+.l-dictionary {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem 2rem;
+
+  &--col-1-2 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &--media-lg {
+    grid-template-columns: 9rem 1fr;
+    grid-gap: 1rem 1.5rem;
+  }
+}
+
+.l-findings {
+  &-search {
+    .c-input-icon--sm.c-input-icon--left .o-input {
+      font-weight: normal;
+      width: 220px;
+      height: 36px;
+
+      &.focus-visible,
+      &:focus-within {
+        padding-left: 1rem;
+        + .c-input-icon__element {
+          display: none;
+        }
+      }
+      &.with-value {
+        padding-left: 1rem;
+      }
+
+      &::-webkit-input-placeholder {
+        font-style: italic;
+      }
+
+      &::-moz-placeholder {
+        font-style: italic;
+      }
+
+      &:-ms-input-placeholder {
+        font-style: italic;
+      }
+
+      &:-moz-placeholder {
+        font-style: italic;
+      }
+    }
+
+    .section-vulnerability-type {
+      .o-btn--outline {
+        background-color: white;
+        color: $text-color-alt;
+        font-weight: 500;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      flex-wrap: wrap;
+
+      > div {
+        margin: 8px 0;
+      }
+    }
+
+    &-wrapper {
+      padding: 0 5rem;
+
+      @media (max-width: 1023px) {
+        padding: 2rem;
+      }
+    }
+  }
+
+  &-severity-filter {
+    min-width: 98px;
+  }
+
+  &-list-options {
+    border-bottom: 1px solid $border-color;
+    padding: 14px 0;
+    .c-box__body {
+      @media (max-width: 1023px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &-head {
+    align-items: center;
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      > div {
+        &:last-child {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.l-findings-datepicker-bar {
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 110px;
+    font-weight: normal;
+  }
+  .o-btn {
+    width: 100%;
+    min-width: 8rem;
+  }
+
+  @media (min-width: 500px) {
+  }
+
+  @media (max-width: 1023px) {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    flex-wrap: wrap;
+
+    > div {
+      margin-bottom: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &.u-ml-20 {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.l-report-download-bar {
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 180px;
+  }
+
+  .o-btn {
+    width: 100%;
+  }
+
+  .c-input-icon__element {
+    font-size: $fs-xl;
+  }
+
+  @media (min-width: 360px) {
+  }
+}
+
+.l-submission-details {
+  display: grid;
+  grid-gap: 2rem;
+  align-items: start;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 34rem;
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: 1fr 40rem;
+  }
+}
+
+.l-form-field-horizontal {
+  display: grid;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 7rem 1fr;
+    grid-gap: 1rem;
+  }
+  .c-custom-control {
+    label {
+      font-weight: bold;
+    }
+  }
+
+  span {
+    font-weight: 300;
+    font-size: $fs-sm;
+    margin-bottom: 8px;
+    display: block;
+  }
+}
+
+.l-transaction-details-header {
+  display: grid;
+  align-items: center;
+  grid-gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 20rem;
+  }
+}
+
+.l-account-settings {
+  &-paypal {
+    background-color: $gray2;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-left: 40px;
+    display: flex;
+    i {
+      margin-right: 14px;
+    }
+  }
+}

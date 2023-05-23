@@ -1,0 +1,35 @@
+.u-border {
+  border: 1px solid $border-color;
+}
+
+.u-border-primary {
+  border: 1px solid $primary-color;
+}
+
+.u-border-alt {
+  border: 0.1rem solid $border-color-alt;
+}
+
+.u-border-top {
+  border-top: 0.1rem solid $border-color;
+}
+
+.u-border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+
+.u-border-right {
+  border-right: 0.1rem solid $border-color;
+}
+
+@media (min-width: 500px) {
+  .u-border-right-at-500 {
+    border-right: 0.1rem solid $border-color;
+  }
+}
+
+@media (max-width: 499px) {
+  .u-border-top-below-500 {
+    border-top: 0.1rem solid $border-color;
+  }
+}

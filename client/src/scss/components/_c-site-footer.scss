@@ -1,0 +1,37 @@
+.c-site-footer {
+  background: $text-color-dark;
+  padding: 60px 0;
+  color: $white;
+  text-align: center;
+
+  .footer-logo {
+    line-height: 0;
+    margin-bottom: 30px;
+
+    a {
+      display: inline-block;
+    }
+
+    img {
+      width: 200px;
+    }
+  }
+
+  p {
+    color: $white;
+    font-weight: 300;
+    font-size: $fs-sm;
+    line-height: 26px;
+    font-family: $primary-font;
+  }
+
+  a {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}

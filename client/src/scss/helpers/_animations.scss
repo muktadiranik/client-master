@@ -1,0 +1,102 @@
+@keyframes slideInOpener {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes gradient-movement {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.slide-pop-enter-active,
+.slide-pop-leave-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 400ms;
+  transition-timing-function: cubic-bezier(0.25, 0.75, 0.5, 1.25);
+}
+
+.slide-pop-enter,
+.slide-pop-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 200ms;
+}
+
+.submenu-enter-active,
+.submenu-leave-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.submenu-enter,
+.submenu-leave-to {
+  opacity: 0;
+  transition: opacity 300ms;
+}

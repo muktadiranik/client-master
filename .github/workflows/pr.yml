@@ -1,0 +1,32 @@
+name: pr
+on:
+  pull_request:
+    branches: ["**"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: download .env file from s3
+        run: aws s3 cp --debug s3://cesppa-build-files/develop-k8/.env .env
+      - name: Set TAG, ENV, and DOCKER_REGISTRY variables
+        run: |
+          echo "ENV_TAG=dev" >> .env
+          echo "TAG=${{ github.sha }}" >> .env
+          echo "TAG=${{ github.sha }}" >> $GITHUB_ENV
+          echo "DOCKER_REGISTRY=720150013645.dkr.ecr.us-west-2.amazonaws.com" >> .env
+      - name: Build containers
+        run: docker-compose build
+      - name: Start containers
+        run: docker-compose up -d
+      - name: Check logs
+        run: docker-compose logs nginx

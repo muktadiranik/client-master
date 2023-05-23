@@ -1,0 +1,66 @@
+.o-uploadbox {
+  width: 120px;
+  height: 120px;
+  background-color: $body-bgc;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  color: $white;
+  cursor: pointer;
+  transition: 0.15s;
+  position: relative;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+
+  &__icon {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: $fs-h3;
+    padding: 0 1rem;
+  }
+
+  &__label {
+    display: block;
+    font: normal 700 1.2rem/1.4 $primary-font;
+    padding: 0 1rem;
+  }
+
+  &__photo::after {
+    // content: 'Upload photo';
+    // font: normal 700 1.4rem/1.5 $primary-font;
+    content: '\f093';
+    font-size: $fs-h3;
+    font-family: $font-awesome;
+    color: $white;
+    font-weight: 300;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: $body-bgc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // transform: scale(.5, .5);
+    transform-origin: center center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    backface-visibility: hidden;
+  }
+
+  &:hover {
+    background-color: darken($body-bgc, 10%);
+
+    .o-uploadbox__photo::after {
+      opacity: 1;
+      visibility: visible;
+      // transform: scale(1, 1);
+    }
+  }
+}

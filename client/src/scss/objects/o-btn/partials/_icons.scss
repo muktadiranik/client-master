@@ -1,0 +1,68 @@
+.o-btn {
+  &--icon {
+    min-width: auto;
+    min-height: auto;
+    width: $btn-height-md;
+    height: $btn-height-md;
+    padding: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: auto;
+
+    i {
+      pointer-events: none;
+    }
+  }
+
+  &--icon-xl {
+    width: $btn-height-xl;
+    height: $btn-height-xl;
+  }
+
+  &--icon-lg {
+    width: $btn-height-lg;
+    height: $btn-height-lg;
+  }
+
+  &--icon-md {
+    width: $btn-height-md;
+    height: $btn-height-md;
+  }
+
+  &--icon-sm {
+    font-size: $fs-lg;
+    margin-right: 16px;
+  }
+
+  &--icon-xs {
+    width: $btn-height-xs;
+    height: $btn-height-xs;
+  }
+
+  &--icon-only {
+    border: 0;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+
+    i {
+      transition: $transition-default;
+    }
+  }
+
+  &--icon-red {
+    color: $crimson-red;
+  }
+
+  &--icon-primary {
+    color: $primary-color;
+  }
+
+  &__icon-left {
+    margin-right: 0.5rem;
+  }
+}

@@ -1,0 +1,61 @@
+.o-btn {
+  height: auto;
+  min-width: max-content;
+
+  &--xl {
+    min-height: $btn-height-xl;
+    font: normal 500 1.6rem/1.4 $primary-font;
+
+    &.o-btn--pill {
+      border-radius: $btn-height-xl / 2;
+    }
+  }
+
+  &--lg {
+    min-height: $btn-height-lg;
+    font: normal 500 1.6rem/1.4 $primary-font;
+
+    &.o-btn--pill {
+      border-radius: $btn-height-lg / 2;
+    }
+  }
+
+  &--md {
+    min-height: $btn-height-sm;
+    padding: 0.5rem 1.5rem;
+    font: normal 600 1.4rem/1.4 $primary-font;
+
+    &.o-btn--pill {
+      border-radius: $btn-height-sm / 2;
+    }
+  }
+
+  &--sm {
+    padding: 0 16px;
+    font-size: 12px;
+    height: 36px;
+
+    &.o-btn--pill {
+      border-radius: $btn-height-sm / 2;
+    }
+  }
+
+  &--xs {
+    min-height: $btn-height-xs;
+    padding: 0.5rem 1rem;
+    min-width: auto;
+    font: normal 500 1.2rem/1.4 $primary-font;
+
+    &.o-btn--pill {
+      border-radius: $btn-height-xs / 2;
+    }
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--long {
+    min-width: 20rem;
+  }
+}

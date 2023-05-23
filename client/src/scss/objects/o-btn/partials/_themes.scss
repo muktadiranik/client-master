@@ -1,0 +1,127 @@
+.o-btn {
+  &--accent {
+    color: $white;
+    background-color: #f39237;
+  }
+
+  &--shadow {
+    color: $primary-color;
+    border-color: $white;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    transition: 0.15s;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0.5rem 0.1rem rgba(63, 63, 68, 0.05), 0 0.1rem 1rem rgba(63, 63, 68, 0.15);
+    }
+  }
+
+  &--cesppa-blue,
+  &--blue {
+    background-color: $cesppa-blue;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($cesppa-blue, 10);
+    }
+  }
+
+  &--coolgrey {
+    color: $white;
+    background-color: $cool-gray;
+
+    &:hover,
+    &:focus {
+      background-color: darken($cool-gray, 10);
+    }
+  }
+
+  &--lightgray {
+    color: $text-color;
+    background-color: transparent;
+    font-weight: 400;
+
+    &:hover,
+    &:focus {
+      background: transparentize($text-color-dark, 0.9);
+    color: $text-color-dark;
+    }
+  }
+
+  &--primary {
+    color: $white;
+    background-color: $primary-color;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: darken($primary-color, 10);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &--outline-primary {
+    &:disabled {
+      color: $primary-disabled;
+    }
+  }
+
+  &--primary-light {
+    @extend .o-btn--primary;
+    background: transparent;
+    color: $primary-color;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      background-color: transparentize($primary-color, 0.9);
+      color: $primary-color;
+    }
+  }
+
+  &--red {
+    background-color: $red;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: darken($red, 10);
+    }
+  }
+
+  &--green {
+    background-color: $green;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: darken($green, 10);
+    }
+  }
+
+  &--purple {
+    background-color: $purple;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($purple, 10);
+    }
+  }
+
+  &--link {
+    color: $primary-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

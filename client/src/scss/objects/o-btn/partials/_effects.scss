@@ -1,0 +1,7 @@
+.o-btn {
+  &--elevate:hover,
+  &--elevate:focus {
+    transform: translate(0, -0.2rem);
+    box-shadow: 0 1rem 2rem 0 rgba($cesppa-blue, 0.25);
+  }
+}

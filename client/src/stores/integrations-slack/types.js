@@ -1,0 +1,9 @@
+export const STORE_KEY = '$integrations-slack'
+
+export const GET_CLIENT_INTEGRATIONS = 'GET_CLIENT_INTEGRATIONS'
+export const EDIT_CLIENT_INTEGRATIONS = 'EDIT_CLIENT_INTEGRATIONS'
+export const GET_SLACK_LINK = 'GET_SLACK_LINK'
+export const LOAD_PROGRAM = 'LOAD_PROGRAM'
+export const SET_PROGRAM = 'SET_PROGRAM'
+export const RESET_STORE = 'RESET_STORE'
+export const SET_LOADING = 'SET_LOADING'

@@ -1,0 +1,144 @@
+.o-input {
+  display: block;
+  width: 100%;
+  height: $height-sm;
+  border: 1px solid $border-color;
+  background-color: $white;
+  border-radius: $border-radius;
+  padding: 8px 12px;
+  color: $text-color-dark;
+  font-size: $fs-xs;
+  font-family: $primary-font;
+  line-height: initial;
+  transition: 0.15s;
+  line-height: initial;
+  @include placeholder-styles($text-color-alt, $fs-xs);
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:hover {
+    border-color: $primary-color;
+    background-color: $input-hover;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    background-color: $white;
+  }
+
+  &--border {
+    background-color: $white;
+    border-color: $border-color-alt;
+  }
+
+  &--inline {
+    display: inline-flex;
+    width: auto;
+  }
+
+  &--xl {
+    height: $btn-height-xl;
+  }
+
+  &--lg {
+    height: $btn-height-lg;
+  }
+
+  &--md {
+    height: $btn-height-md;
+  }
+
+  &--sm {
+    height: $btn-height-sm;
+    padding: 0.5rem 1rem;
+  }
+
+  &--xs {
+    height: $btn-height-xs;
+    padding: 0.5rem 1rem;
+  }
+
+  &--select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  &--sm {
+    height: 38px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &--white {
+    background-color: $white;
+    border: 0;
+    box-shadow: $box-shadow;
+
+    & ~ i {
+      color: $text-color;
+    }
+
+    @include placeholder-styles($text-color, $fs-xs);
+  }
+
+  &--maxchars {
+    color: red;
+  }
+  &:read-only:not(.o-input--date) {
+    background-color: #F4F4F4;
+
+    &:hover,
+    &:focus {
+      border-color: $border-color;
+    }
+  }
+}
+
+.o-input-maxchar-countdown {
+  float: right;
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.o-textarea {
+  @extend .o-input;
+  line-height: 1.5;
+
+  &--border {
+    background-color: $white;
+    border-color: $border-color-alt;
+  }
+}
+
+.o-input-group {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1rem solid $border-color-alt;
+    font-size: $fs-sm;
+    background-color: $off-white;
+  }
+
+  &--prepend {
+    .o-input {
+      border-radius: 0 0.3rem 0.3rem 0;
+    }
+    .o-input-group__text {
+      margin-right: -0.1rem;
+      border-radius: $border-radius 0 0 0.3rem;
+    }
+  }
+
+  &--xs {
+    .o-input-group__text {
+      height: $btn-height-xs;
+    }
+  }
+}

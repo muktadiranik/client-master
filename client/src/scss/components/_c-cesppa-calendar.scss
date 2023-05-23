@@ -1,0 +1,84 @@
+// .c-cesppa-calendar-container {}
+.vdp-datepicker__calendar {
+  &.c-cesppa-calendar {
+    border: none;
+    border-radius: 10px;
+    font-size: $fs-xs;
+    box-shadow: 0px 6px 13px rgba(10, 39, 87, 0.2);
+    width: 316px;
+
+    > div {
+      padding: 32px;
+    }
+
+    .cell {
+      height: 36px;
+      width: 36px;
+      line-height: 36px;
+      border-radius: 4px;
+    }
+  
+    .cell.selected {
+      color: $white !important;
+      font-weight: 500;
+      background-color: $primary-color !important;
+    }
+  
+    .cell:not(.blank):not(.disabled):not(.selected).day:hover,
+    .cell:not(.blank):not(.disabled):not(.selected).month:hover,
+    .cell:not(.blank):not(.disabled):not(.selected).year:hover {
+      background-color: $hover-color;
+      color: $primary-color;
+      border-color: transparent;
+    }
+  
+    .cell.day-header {
+      font-size: 100% !important;
+      font-weight: 500;
+    }
+  
+    header .prev:not(.disabled):hover,
+    header .next:not(.disabled):hover,
+    header .up:not(.disabled):hover {
+      background-color: transparent;
+    }
+  
+    header .prev,
+    header .next,
+    header .up,
+    header > span {
+      color: $text-color-dark;
+      font-weight: 500;
+      border-bottom: 0.1rem solid $border-color !important;
+    }
+
+    header .prev,
+    header .next {
+      color: $text-color;
+      text-indent: 0;
+      font-size: 0;
+      &::after {
+        font-family: $font-awesome;
+        font-weight: 300;
+        border: none;
+        width: 100%;
+        font-size: $fs-sm;
+      }
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    header .prev {
+      &::after {
+        content: '\f053';
+      }
+    }
+    header .next {
+      &::after {
+        content: '\f054';
+      }
+    }
+  }
+}

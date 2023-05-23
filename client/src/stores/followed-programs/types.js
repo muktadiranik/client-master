@@ -1,0 +1,6 @@
+export const STORE_KEY = '$followed-programs'
+
+export const LOAD_FOLLOWED_PROGRAMS = 'LOAD_FOLLOWED_PROGRAMS'
+export const SET_FOLLOWED_PROGRAMS = 'SET_FOLLOWED_PROGRAMS'
+export const TOGGLE_FOLLOWING = 'TOGGLE_FOLLOWING'
+export const SET_LOADING = 'SET_LOADING'

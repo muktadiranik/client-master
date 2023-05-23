@@ -1,0 +1,58 @@
+.c-user-type {
+  label {
+    color: $text-color-alt;
+    border: 0.1rem solid $border-color;
+    padding: 1.5rem 2rem;
+    background-color: $off-white;
+    border-radius: $border-radius;
+    cursor: pointer;
+    position: relative;
+    padding-left: 5rem;
+    transition: 0.15s ease-in-out;
+    font: normal 400 1.4rem/1.4 $primary-font;
+  }
+
+  h6 {
+    color: $text-color-alt;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    font-weight: 600;
+    font-size: $fs-sm;
+  }
+
+  p {
+    color: $text-color;
+    transition: 0.15s ease-in-out;
+  }
+
+  i {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.6rem;
+    font-size: $fs-xl;
+    color: $text-color;
+    transition: 0.15s ease-in-out;
+  }
+
+  i.fa-check-circle {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  input:checked + label {
+    border-color: $primary-color;
+    background-color: $white;
+  }
+
+  input:checked + label h6,
+  input:checked + label p {
+    color: $text-color-dark;
+  }
+
+  input:checked + label i.fa-check-circle {
+    opacity: 1;
+    visibility: visible;
+    color: $primary-color;
+  }
+}

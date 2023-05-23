@@ -1,0 +1,88 @@
+.c-signup-container {
+  background-color: $white;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 422px 1fr;
+    min-height: 100vh;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.c-signup-aside {
+  background-color: $dark-blue;
+  background-position: right top;
+  background-repeat: no-repeat;
+
+  &__content {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+    @media (min-width: 1024px) {
+      margin-left: 0;
+    }
+  }
+
+  &__logo {
+    width: 156px;
+  }
+
+  &__text {
+    margin-top: 3rem;
+    padding-right: 41px;
+    height: calc(100% - 231px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: 360px) {
+      margin-top: 5rem;
+    }
+
+    @media (min-width: 1024px) {
+      margin-top: 231px
+    }
+  }
+
+  &__footer {
+    padding-bottom: 55px;
+    
+    &-text {
+      font-size: $fs-xs;
+      color: #CDD4E0;
+      line-height: 20px;
+      margin-top: 16px;
+    }
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 23px;
+  }
+
+  p {
+    color: $white;
+    font-size: 13px;
+    line-height: 22px;
+  }
+}
+
+.c-signup-container .c-signup-aside,
+.c-signup-container main {
+  padding: 4rem 1.5rem;
+
+  @media (min-width: 360px) {
+    padding: 5rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 49px;
+  }
+}

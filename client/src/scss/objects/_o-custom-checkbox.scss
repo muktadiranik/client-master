@@ -1,0 +1,57 @@
+.o-custom-checkbox {
+  position: absolute;
+  opacity: 0;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 2px;
+    border: 1px solid $border-color;
+  }
+
+  // Box hover
+  // &:hover + label:before {
+  //   background: #f35429;
+  // }
+
+  // Box checked
+  &:checked + label:before {
+    background: $primary-color;
+    border-color: $primary-color;
+  }
+  
+  // Disabled state label.
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: $secondary-bg;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: '\f00c';
+    font-family: $font-awesome;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    color: white;
+    font-size: 8px;
+  }
+}

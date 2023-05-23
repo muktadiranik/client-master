@@ -1,0 +1,57 @@
+.c-transaction-details-content {
+  display: grid;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 40% 60%;
+  }
+
+  &__left {
+    padding: 3rem 0;
+    border-bottom: 0.1rem solid $border-color;
+
+    @media (min-width: 768px) {
+      border-bottom: 0;
+      border-right: 0.1rem solid $border-color;
+      padding: 3rem 3rem 3rem 0;
+    }
+  }
+
+  &__right {
+    padding: 3rem 0;
+
+    @media (min-width: 768px) {
+      padding: 3rem 0 3rem 3rem;
+    }
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.c-submission-pm-toolbar {
+  display: flex;
+  align-items: center;
+  margin: -1rem;
+
+  & > li {
+    margin: 1rem;
+  }
+}
+
+.c-template-pages-list {
+  li:not(:last-child) {
+    padding-bottom: 3rem;
+    border-bottom: 0.1rem solid $border-color;
+    margin-bottom: 3rem;
+  }
+}
+
+.integration-expandable {
+  padding-bottom: 14px;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

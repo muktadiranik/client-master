@@ -1,0 +1,37 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: $text-color;
+  background-color: $body-bgc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+th {
+  color: $text-color-dark;
+}
+
+* + p {
+  margin-top: 1rem;
+}
+
+.c-site-main,
+.c-site-footer {
+  transition: $transition-default;
+}
+
+// vue-simplemde markdown heading style overrides
+.cm-header-1, .cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6{
+  font-size: 16px !important
+}

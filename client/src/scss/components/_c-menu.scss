@@ -1,0 +1,117 @@
+.c-menu {
+  display: flex;
+  height: 100%;
+
+  &__list--inline {
+    & > li:not(:last-child) {
+      margin-right: 0.6rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__item--program-switcher {
+    border-bottom: 0.1rem solid $border-color;
+
+    & > div,
+    .c-menu__text {
+      width: 100%;
+    }
+  }
+
+  &__item--submenu {
+    position: relative;
+  }
+
+  &__link,
+  &__text {
+    display: inline-flex;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.4rem;
+    color: $text-color-alt;
+    background-color: transparent;
+    text-decoration: none;
+    font: normal 700 1.4rem/1.5 $primary-font;
+    white-space: nowrap;
+  }
+
+  &__item--active &__link,
+  &__item--active &__text,
+  &__item:hover &__link,
+  &__item:focus &__link,
+  &__link:hover,
+  &__link:focus {
+    text-decoration: none;
+    color: $primary-color;
+    background-color: $hover-color;
+  }
+
+  &--secondary {
+    .c-menu__link {
+      text-transform: none;
+      cursor: pointer;
+    }
+
+    .c-menu__item--active {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.3rem;
+        background-color: $primary-color;
+      }
+    }
+
+    .c-menu__item--active > .c-menu__link,
+    .c-menu__item:hover > .c-menu__link,
+    .c-menu__item:focus > .c-menu__link,
+    .c-menu__link:hover,
+    .c-menu__link:focus {
+      background-color: transparent;
+    }
+  }
+
+  &--login {
+    margin-left: auto;
+  }
+
+  &--secondary {
+    .c-menu__item {
+      &--active {
+        border: 1px solid $border-color-alt;
+        border-bottom: 0;
+        border-radius: 4px 4px 0 0;
+        background: $body-bgc;
+
+        &:after {
+          background: $body-bgc;
+        }
+      }
+
+      &:hover {
+        .c-menu__link {
+          color: $text-color;
+        }
+      }
+    }
+    .c-menu__link {
+      color: $text-color-alt;
+      font-size: $fs-sm;
+    }
+  }
+}

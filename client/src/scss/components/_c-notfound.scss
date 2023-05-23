@@ -1,0 +1,27 @@
+.c-notfound {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+        color: $border-color;
+        font-size: 212px;
+        font-weight: 900;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: $fs-lg;
+        margin: 32px 0;
+        line-height: 27px;
+        color: $text-color-dark;
+    }
+}

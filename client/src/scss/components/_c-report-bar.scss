@@ -1,0 +1,77 @@
+.l-report-bar {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.c-report-bar {
+  &__logo-img {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+    object-fit: cover;
+    // object-position: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__info {
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  &__title a {
+    display: inline-block;
+    color: $text-color-dark;
+    font: normal 700 1.4rem/1 $primary-font;
+    white-space: nowrap;
+    width: 530px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__meta {
+    color: $text-color;
+    font: normal 400 1.2rem/1 $primary-font;
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__meta a {
+    display: inline-flex;
+    color: $text-color;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__meta-item {
+    .meta-item-elipsis {
+      a {
+        max-width: 150px;
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+
+  &__meta-item:not(:last-child) {
+    padding-right: 1rem;
+    border-right: 0.1rem solid $border-color;
+    margin-right: 1rem;
+  }
+}

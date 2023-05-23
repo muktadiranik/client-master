@@ -1,0 +1,109 @@
+.c-alert {
+  border-radius: $border-radius;
+  color: $white;
+  background-color: $cesppa-blue-light;
+  font-size: 11px;
+  padding: 12px;
+  display: flex;
+    align-items: center;
+
+  &::before {
+    font-family: $font-awesome;
+    font-weight: 300;
+    font-size: $fs-sm;
+    margin-right: 8px;
+  }
+
+  &--warning {
+    color: $text-color-dark;
+    background-color: $warning-color;
+  }
+
+  &--success {
+    color: $success-color;
+    background-color: $success-bg;
+
+    &::before {
+      content: '\f058';
+    }
+  }
+
+  &--error {
+    color: $error-color;
+    background-color: $error-bg;
+    
+    &::before {
+      content: '\f071';
+    }
+  }
+
+  &--informational {
+    color: $white;
+    background-color: $cesppa-blue-light;
+  }
+
+  &--action {
+    color: $white;
+    background: $researcher-color;
+  }
+
+  &--padding-lg {
+    @media (min-width: 375px) {
+      padding: 1.5rem 3rem;
+    }
+  }
+
+  &--fixed-bottom {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    z-index: $z-index-alert;
+
+    .c-navbar--enabled & {
+      left: $sidebar-width + 2rem;
+    }
+  }
+
+  &-message {
+    margin-top: 26px;
+    background-color: $alert-info;
+    border: 1px dashed $border-color;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--info {
+      background-color: $alert-info;
+      border-color: $border-color;
+    }
+
+    &--success {
+      background-color: $alert-success;
+      border-color: $green;
+    }
+
+    &--error {
+      background-color: $alert-error;
+      border-color: $red;
+    }
+
+    h6 {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: $fs-xs;
+      color: $text-color;
+      margin-top: 14px;
+    }
+
+    &-close {
+      cursor: pointer;
+      font-size: $fs-md;
+    }
+  }
+}

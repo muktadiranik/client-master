@@ -1,0 +1,9 @@
+\.idea/
+\.env
+!client/.env
+\.vscode/
+\.env_prod
+\.env_prod2
+\.env_debug
+node_modules
+.dccache

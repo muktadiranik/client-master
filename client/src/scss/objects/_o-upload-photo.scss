@@ -1,0 +1,77 @@
+.o-upload-photo {
+  display: flex;
+  position: relative;
+
+  &__label {
+    background-color: $off-white;
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '\f304';
+      font-family: $font-awesome;
+      font-weight: 300;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      background-color: white;
+      border: 1px solid $text-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: $text-color;
+      font-size: 13px;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover,
+    &:focus {
+      &:after {
+        border: 1px solid $primary-color;
+        background-color: $hover-color;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &--circle {
+    .o-upload-photo__label {
+      border-radius: 50%;
+    }
+
+    .o-upload-photo__label:hover::after,
+    .o-upload-photo__label:focus::after {
+      border-radius: 50%;
+    }
+  }
+
+  &--full {
+    .o-upload-photo__label {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &--lg {
+    width: 96px;
+    height: 96px;
+    .o-upload-photo__label {
+      width: 96px;
+      height: 96px;
+    }
+  }
+}

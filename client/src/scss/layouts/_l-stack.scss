@@ -1,0 +1,30 @@
+.l-stack {
+  display: grid;
+  grid-gap: 2rem;
+
+  &--gap-10 {
+    grid-gap: 1rem;
+  }
+
+  &--gap-20 {
+    grid-gap: 2rem;
+  }
+
+  &--horizontal {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+
+  &--two-col {
+    grid-template-columns: auto auto;
+  }
+
+  &--form {
+    @media (min-width: 375px) {
+      grid-gap: 2rem 1.5rem;
+    }
+
+    &.l-stack--horizontal {
+      grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.c-dictionary {
+  color: $text-color-dark;
+  font-size: $fs-xs;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__key-icon {
+    width: 1.6rem;
+    text-align: left;
+  }
+
+  &--font-sm {
+    font-size: $fs-xs;
+  }
+
+  &__key {
+    color: $text-color-dark;
+    font-size: $fs-xs;
+    width: 80px;
+  }
+
+  &__value{
+    color: $text-color-dark;
+    font-size: $fs-xs;
+  }
+}

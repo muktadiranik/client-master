@@ -1,0 +1,255 @@
+.c-site-header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: $z-index-header;
+  transition: $transition-default;
+  border-bottom:1px solid $border-color;
+
+  .c-navbar--short & {
+    left: 6.5rem;
+    width: calc(100% - #{$sidebar-short-width});
+  }
+}
+
+.c-header {
+  height: $header-height;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+
+  &--enabled {
+    .c-site-main {
+      padding-top: $header-height;
+      height: 100%;
+    }
+  }
+
+  &__topbar {
+    display: flex;
+    height: 100%;
+  }
+
+  &__topbar-item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__topbar-icon {
+    border-radius: 0.4rem;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+
+    font-size: $fs-xxl;
+
+    & > img {
+      width: 2rem;
+      border-radius: 50%;
+    }
+
+    &.unread-notification {
+      &:after {
+        content: '';
+        width: 7px;
+        height: 7px;
+        background-color: #FF6060;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;  
+      }
+    }
+  }
+
+  &__topbar-item:hover > &__topbar-icon,
+  &__topbar-item:focus > &__topbar-icon {
+    color: $primary-color;
+;
+  }
+
+  &__topbar-user-media {
+    font-size: $fs-sm;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+
+  &__topbar-user-img {
+    max-width: 3.2rem;
+    border-radius: 0.4rem;
+  }
+
+  &__topbar-user-fullname {
+    color: $text-color-dark;
+    font-weight: 500;
+    font-size: $fs-sm;
+  }
+
+  &__topbar-user-username {
+    color: $text-color;
+    font-size: $fs-xs;
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &-navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.c-subheader {
+  height: $sub-header-height;
+  padding: 0 2.5rem;
+  background-color: $white;
+  border-top: 0.1rem solid rgba(43, 48, 52, 0.1);
+
+  .c-header-mobile--enabled & {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: $mobile-header-height;
+    left: 0;
+    box-shadow: $box-shadow;
+    z-index: $z-index-subheader;
+    transition: $transition-default;
+    transform: scale(1, 0);
+    transform-origin: top;
+    border-top: 0;
+  }
+
+  &--enabled {
+    .c-subheader {
+      transform: scale(1, 1);
+    }
+
+    .c-site-main {
+      padding-top: ($header-height + $sub-header-height);
+    }
+  }
+
+  .is-mobile & {
+    height: auto;
+    padding: 0;
+
+    .c-menu {
+      height: auto;
+    }
+
+    .c-menu__list {
+      width: 100%;
+      display: block;
+    }
+
+    .c-menu__item {
+      height: auto;
+      margin: 0;
+
+      &--active::after {
+        width: 0.3rem;
+        height: 100%;
+      }
+    }
+
+    .c-menu__link {
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        background-color: lighten($main-background, 75)
+;
+      }
+    }
+  }
+}
+
+.c-header-mobile {
+  height: $mobile-header-height;
+  background-color: $white;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo-img {
+    height: 26px;
+  }
+
+  &--enabled {
+    .c-site-main {
+      padding-top: $mobile-header-height;
+    }
+  }
+
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    margin-left: -1rem;
+  }
+
+  &__toolbar-toggler {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.4rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+      color: $primary-color;
+      font-size: $fs-xl;
+    }
+
+    &:hover {
+      background-color: lighten($main-background, 75)
+;
+    }
+  }
+}
+
+.c-page-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: $z-index-page-overlay;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-default;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

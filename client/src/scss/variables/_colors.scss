@@ -1,0 +1,118 @@
+//Background colors
+$off-white: #f8f9fb;
+$body-bgc: #fff;
+$secondary-bg: #e7edf2;
+$main-background: #1e1e2d;
+
+$ins-dark-red: #720c00;
+$ins-red: #d04838;
+$ins-orange: #ff9900;
+$ins-orange-acc: #d97012;
+$ins-green: #239a61;
+$ins-green-acc: #157245;
+$ins-blue: #005ec4;
+$ins-dark-blue: #0057a6;
+$ins-gray: #595959;
+$ins-black: #313131;
+$gray-2: #4f4f4f;
+$gray-3: #828282;
+$gray-4: #bdbdbd;
+$gray-5: #e0e0e0;
+$gray-6: #f2f2f2;
+$light-gray: #fafafb;
+
+// Severity Colors
+// Severity Colors
+$severity-critical: $ins-dark-red;
+$severity-high: $ins-red;
+$severity-medium: $ins-orange;
+$severity-low: $ins-green;
+$severity-info: $gray-3;
+$severity-none: $gray-3;
+
+$status-new: #0095FF;
+$status-closed: #219653;
+
+// Submissions Colors
+$submission-pending: #50d8b6;
+$submission-closed: #ffa18e;
+$submission-accepted: #13AC87;
+$submission-rejected: #FF5C70;
+$submission-duplicate: #6B778C;
+
+// Payment
+$paid: #13AC87;
+$pending: #F2994A;
+$paypal: #2F80ED;
+$bitcoin:#F2994A;
+
+// program status
+$frozen: #E0F2FF;
+$private: #E5E7EA;
+
+// Text Colors
+$text-color: #535F75;
+$text-color-dark: #181825;
+$text-color-alt: #5E6C84;
+
+// Border Colors
+$border-color: #cdd4e0;
+$border-color-alt: #d0d5db;
+
+// Primary Color
+$primary-color: #0095ff;
+$secondary-color: #083d7d;
+$link-color: $primary-color;
+$primary-disabled: #47b3ff;
+
+// Legacy CESPPA Colors we need to review reference from code
+$crimson-red: #800d07;
+$purple: #4a017d;
+$cool-gray: #53565a;
+$yellow: #FFC400;
+$red: #FF5C70;
+$green: #13AC87;
+
+// User Colors
+$app-owner-color: #0b0e55;
+$program-manager-color: #4a017d;
+$researcher-color: #800d07;
+$banker-color: #00aa00;
+
+// Legacy CESPPA Colors we don't use anymore
+$cesppa-blue: #0b0e55;
+$cesppa-blue-light: #333366;
+
+// Other Colors
+$cesppa-color: #333366;
+$success-color: #219653;
+$success-bg: #E2F5EB;
+ 
+$warning-color: #fee066;
+
+$error-color: #EB5757;
+$error-bg: #FDEBEB;
+
+$code-color: #41383c;
+$white: #fff;
+$black: #000;
+$gray: #787c82;
+$gray1: #f3f3f3;
+$gray2: #f5f8fa;
+$dark-blue: #193D79;
+// Table colors
+$table-primary-color: #4194cc;
+
+// Hover
+$input-hover: #f8fbfd;
+$hover-color: #EDF8FF;
+
+// Alert
+$alert-success: rgba(19, 172, 135, 0.1);
+$alert-info: rgba(205, 212, 224, 0.15);
+$alert-error: rgba(255, 92, 112, 0.1);
+
+// Accent Color
+@function color($color-name) {
+  @return var(--color-#{$color-name});
+}

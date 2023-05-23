@@ -1,0 +1,253 @@
+@import './ca-alert';
+@import './markdown-editor';
+@import './misc';
+
+.ca-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparentize($black, 0.6);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .ca-dialog__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: $border-radius;
+    width: 100%;
+    max-width: 530px;
+    overflow: hidden;
+    box-shadow: $dialog-box-shadow;
+
+    .ca-dialog__header {
+      color: $white;
+      background: color(accent);
+      // padding: 10px 20px;
+      padding: 6px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h4,
+      i {
+        color: inherit;
+        font-size: $fs-xl;
+        font-weight: 500;
+        padding: 4px;
+      }
+
+      i {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .ca-dialog__body {
+      padding: 20px;
+      background-color: $white;
+      color: $text-color-dark;
+
+      .buttons {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &.programManager {
+    .ca-dialog__content {
+      .ca-dialog__header {
+        background: $program-manager-color;
+      }
+    }
+  }
+}
+
+.ca-element {
+  background-color: $off-white;
+  border-radius: $border-radius;
+  display: flex;
+  padding: 4px;
+  border: 1px solid transparent;
+  cursor: text;
+
+  &:hover {
+    border: 1px solid $border-color;
+  }
+
+  .ca-input-tag {
+    background-color: $body-bgc;
+    display: flex;
+    border-radius: 14px;
+    border: 1px solid $primary-color;
+    padding: 0 12px;
+    line-height: 28px;
+    cursor: pointer;
+    color: $black;
+    right: 10px;
+
+    i {
+      color: $primary-color;
+      line-height: 1;
+      display: block;
+      margin-left: 8px;
+      line-height: 28px;
+    }
+
+    &.loading {
+      animation: glow 2s infinite;
+    }
+  }
+
+  &.appOwner {
+    .ca-input-tag {
+      border: 1px solid $app-owner-color;
+      background-color: lighten($app-owner-color, 34);
+    }
+
+    i {
+      color: $app-owner-color;
+    }
+  }
+
+  &.programManager {
+    .ca-input-tag {
+      border: 1px solid $program-manager-color;
+      background-color: lighten($program-manager-color, 34);
+      transition: 100ms all;
+    }
+
+    i {
+      color: $program-manager-color;
+    }
+  }
+}
+
+.ca-tag-text-input {
+  min-width: 250px;
+
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
+    border-color: transparent;
+  }
+}
+
+.badge-list {
+  display: inline-flex;
+  flex: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  li {
+    flex: 0 1 auto;
+    margin: 2px;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+  }
+}
+
+// hu-color-picker
+.hu-color-picker {
+  position: absolute;
+  z-index: 999;
+
+  .alpha,
+  .history,
+  .colors,
+  .color-type:not(first-child) {
+    display: none;
+  }
+
+  .show canvas {
+    width: 90%;
+  }
+
+  &:not(.sucking-enabled) {
+    svg {
+      opacity: 0.1;
+    }
+  }
+
+  &.programManager {
+    &.sucking-enabled svg {
+      fill: $program-manager-color !important;
+
+      &:hover {
+        fill: darken($program-manager-color, 10) !important;
+      }
+    }
+  }
+
+  &.researcher {
+    &.sucking-enabled svg {
+      fill: $researcher-color !important;
+
+      &:hover {
+        fill: darken($researcher-color, 10) !important;
+      }
+    }
+  }
+
+  &.appOwner {
+    &.sucking-enabled svg {
+      fill: $app-owner-color !important;
+
+      &:hover {
+        fill: darken($app-owner-color, 10) !important;
+      }
+    }
+  }
+}
+
+.ca-solar-wrapper {
+  height: 4px;
+  width: 100%;
+  position: fixed;
+  z-index: $z-index-solar-wrapper;
+  top: 58px;
+  box-sizing: border-box;
+}
+
+// Ca Solar
+.ca-solar {
+  height: 4px;
+  z-index: 9999;
+  background: rgb(30, 54, 114);
+  background: linear-gradient(90deg, rgba(30, 54, 114, 1), rgba(176, 97, 209, 1), rgba(30, 54, 114, 1));
+  background-size: 50% 100%;
+
+  animation: gradient-movement 3s linear infinite;
+  animation-fill-mode: forwards;
+
+  &.researcher {
+    background: rgb(30, 54, 114);
+    background: linear-gradient(
+      90deg,
+      rgba(176, 62, 62, 1),
+      rgba(241, 85, 85, 1),
+      rgba(175, 14, 14, 1),
+      rgba(176, 62, 62, 1)
+    );
+  }
+
+  &.appOwner {
+    background: rgb(30, 54, 114);
+    background: linear-gradient(90deg, rgba(69, 165, 245, 1), rgba(43, 77, 165, 1), rgba(69, 165, 245, 1));
+  }
+
+  &.thin {
+    height: 2px;
+  }
+}

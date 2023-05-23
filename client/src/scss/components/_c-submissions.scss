@@ -1,0 +1,471 @@
+.c-submissions {
+    font-family: $primary-font;
+    font-size: $fs-xs;
+    &__wrapper {
+        padding: 2rem;
+
+        @media (min-width: 1024px) {
+            padding: 3rem;
+        }
+    }
+    &__header {
+        background-color: $secondary-bg;
+        width: 100%;
+        display: flex;
+        padding: 16px 0;
+
+        &--paid-pending {
+            margin-bottom: 8px;
+            width: 18%;
+            margin-right: 14px;
+
+            @include desktop {
+                max-height: 180px;
+            }
+
+            @include mobile {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+        }
+        
+        &-box {
+            background: $white;
+            border-radius: $border-radius;
+            border: 1px solid $border-color;
+            width: 100%;
+
+            &--paid {
+                margin-bottom: 8px;
+                width: 100%;
+                height: 50%;
+                
+
+                > div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                }
+            }
+
+            &--pending {
+                width: 100%;
+                height: 50%;
+
+                > div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                }
+            }
+
+            &--submissions {
+                width: 39%;
+                margin-right: 14px;
+                @include desktop {
+                    max-height: 188px;
+                }
+                @include mobile {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 16px;
+                }
+            }
+
+            &--accepted  {
+                width: 40%;
+                @include desktop {
+                    max-height: 188px;
+                }
+                @include mobile {
+                    width: 100%;
+                }
+            }
+
+            &-head {
+                padding: 12px 16px;
+                font-weight: 500;
+            }
+
+            &-body {
+                padding: 20px;
+
+                .cdc-container {
+                    width: 107px;
+                    margin-right: 24px;
+                }
+
+                &-items {
+                    display: flex;
+                    flex-direction: column;
+	                flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    @media (min-width: 590px) {
+                        height: 50px; 
+                    }
+
+                    @include desktop {
+                        height: 110px;
+                    }
+                }
+
+                &-item {
+                    position: relative;
+                    padding: 10px 20px;
+                    padding-left: 36px;
+                    &:before {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 13px;
+                        left: 20px;
+                    }
+                    &--accepted {
+                        padding-right: 8px;
+                        &:before {
+                            background-color: $submission-accepted;
+                        }
+                    }
+                    &--rejected {
+                        padding-right: 8px;
+    
+                        &:before {
+                            background-color: $submission-rejected;
+                        }
+                    }
+                    &--duplicate {
+                        padding-right: 8px;
+                        &:before {
+                            background-color: $submission-duplicate;
+                        }
+                    }
+                    &--critical {
+                        padding-right: 8px;
+                        &:before {
+                            background-color: $severity-critical;
+                        }
+                    }
+                    &--high {
+                        padding-right: 8px;
+    
+                        &:before {
+                            background-color: $severity-high;
+                        }
+                    }
+                    &--medium {
+                        padding-right: 8px;
+                        &:before {
+                            background-color: $severity-medium;
+                        }
+                    }
+                    &--low {
+                        padding-right: 8px;
+                        &:before {
+                            background-color: $severity-low;
+                        }
+                    }
+                    &--info {
+                        padding-right: 8px;
+                        &:before {
+                            background-color: $severity-info;
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        &-head {
+            padding: 3rem 2rem;
+
+            @media (min-width: 1024px) {
+
+                > div {
+                    &:first-child {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+
+            &-title {
+                font-size: $fs-sm;
+                font-weight: 400; 
+            }
+            
+            &-value {
+                font-size: $fs-md;
+                font-weight: bold;
+            }
+
+            @media (max-width: 1023px) {
+                display: flex;
+                padding: 2rem;
+
+                div:first-child {
+                    margin-right: 2rem;
+                }
+            }
+        }
+
+        &-body {
+   
+            box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.08);
+            height: 100%;
+
+            &-block {
+                padding: 2rem;
+
+                &-title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    > div {
+                        font-size: $fs-sm;
+                        font-weight: bold;
+                        > span {
+                            font-weight: 400;
+                        }
+                    }
+                    > span {
+                        font-size: $fs-md;
+                        font-weight: 500;
+                        span {
+                            color: $text-color-alt;
+                        }
+                    }
+                }
+
+                &-subtitle {
+                    font-weight: 400;
+                    font-size: $fs-xxs;
+                    color: $text-color-alt;
+                }
+
+                &-chart {
+                    width: 100%;
+                    display: flex;
+                    padding: 14px 0;
+                    > div {
+                        height: 20px;
+                        border: 1px solid white;
+
+                        &:first-child {
+                            border-left: none;
+                        }
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                    &-pending {
+                        background-color: $submission-pending;
+                    }
+                    &-closed {
+                        background-color: $submission-closed;
+                    }
+                    &-critical {
+                        background-color: $severity-critical;
+                    }
+                    &-high {
+                        background-color: $severity-high;
+                    }
+                    &-medium {
+                        background-color: $severity-medium;
+                    }
+                    &-low {
+                        background-color: $severity-low;
+                    }
+                    &-info {
+                        background-color: $severity-info;
+                    }
+                }
+                &-legend {
+                    font-size: $fs-sm;
+
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 14px;
+                        padding-left: 1rem;
+
+                        > span {
+                            font-weight: 500;
+
+                            span {
+                                color: $text-color-alt;
+                            }
+                        }
+                    }
+                    &-pending {
+                        border-left: 2px solid $submission-pending
+                    }
+                    &-closed {
+                        border-left: 2px solid $submission-closed
+                    }
+                    &-critical {
+                        border-left: 2px solid $severity-critical;
+                    }
+                    &-high {
+                        border-left: 2px solid $severity-high;
+                    }
+                    &-medium {
+                        border-left: 2px solid $severity-medium;
+                    }
+                    &-low {
+                        border-left: 2px solid $severity-low;
+                    }
+                    &-info {
+                        border-left: 2px solid $severity-info;
+                    }
+                }
+            }
+        }
+    }
+
+    &-divider {
+        border: 1px solid $border-color;
+        margin: 0 2rem;
+    }
+
+    &__featured {
+        &-slick {
+            margin: 16px 0;
+
+            .slick-slide {
+                margin: 0 10px;
+            }
+
+            .c-program-card {
+                min-width: 400px;
+            }
+
+            &-card {
+               min-width: 330px;
+               padding: 16px;
+               cursor: pointer;
+
+               &-title {
+                   font-weight: 800;
+                   font-size: $fs-sm;
+                   padding: 0 1rem;
+                   max-width: 220px;
+               }
+
+               &-subtitle {
+                   font-size: $fs-sm;
+                   color: $text-color-alt;
+                   padding: 0 1rem;
+               }
+
+               span {
+                   color: $text-color-alt;
+                   font-size: $fs-sm;
+               }
+
+               &:focus {
+                   outline: none;
+               }
+
+               &-assets {
+                    &-img {
+                        width: 43px;
+                        height: 43px;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                   }
+
+                   &-icon {
+                       display: flex;
+                       align-items: center;
+                       margin-top: 8px;
+
+                       span {
+                           font-size: $fs-sm;
+                           margin-left: 4px;
+                       }
+                   }
+               }
+            }
+        }
+    }
+
+    &__card {
+        padding: 1rem 1rem 1.5rem;
+        margin: 1em 0;
+        cursor: pointer;
+        position: relative;
+    
+        @media (max-width: 1023px) {
+    
+           div:first-child {
+            flex-wrap: wrap;
+    
+            span:first-child {
+              margin-bottom: 8px;
+            }
+          }
+        }
+    
+        &-date {
+          font-size: $fs-xs;
+          color: $text-color-alt
+        }
+    
+        &-title {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          font-weight: 500;
+          font-size: $fs-sm;
+          margin-bottom: 8px;
+          max-width: 90%;
+          
+          a {
+              color: $text-color-dark;
+          }
+        }
+    
+        &-subtitle {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: $fs-sm;
+            margin-bottom: 8px;
+            a {
+                color: $text-color-alt;
+            }
+        }
+        
+        &-bounty {
+            font-size: $fs-sm;
+            a {
+                color: $text-color;
+            }
+        }
+
+        &-img {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+      }
+}

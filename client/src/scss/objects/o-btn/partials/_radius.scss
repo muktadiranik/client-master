@@ -1,0 +1,17 @@
+.o-btn {
+  &--rounded {
+    border-radius: $border-radius;
+  }
+
+  &--rounded-sm {
+    border-radius: 0.2rem;
+  }
+
+  &--rounded-xsm {
+    border-radius: 0.2rem;
+  }
+
+  &--pill {
+    border-radius: $btn-height-md / 2;
+  }
+}

@@ -1,0 +1,95 @@
+.c-box {
+  border: 1px solid $border-color;
+  background-color: $white;
+  border-radius: $border-radius;
+
+  &__header {
+    background-color: $secondary-bg;
+    padding: 10px 20px;
+
+    &--sm {
+      padding: 1rem 1.5rem;
+
+      @media (min-width: 375px) {
+        padding: 1rem 3rem;
+      }
+    }
+
+    &--no-border-bottom {
+      border-bottom: 0;
+    }
+
+    &__text {
+      font-size: $fs-xs;
+      color: $text-color;
+      font-weight: 500;
+    }
+  }
+
+  &__body {
+    padding: 20px;
+    font-size: $fs-xs;
+    color: $text-color-dark;
+
+    &--no-padding {
+      padding: 0;
+    }
+
+    &--border-top {
+      border-top: 0.1rem solid $border-color;
+    }
+
+    &--border-bottom {
+      border-bottom: 0.1rem solid $border-color;
+    }
+
+    &--w-70 {
+      width: 70%;
+    }
+  }
+
+  &__footer {
+    border-top: 0.1rem solid $border-color;
+    padding: 1.5rem;
+
+    @media (min-width: 375px) {
+      padding: 1.5rem 3rem;
+    }
+  }
+
+  &.is-collapsed .c-box__body,
+  &.is-collapsed .c-box__footer {
+    display: none;
+  }
+
+  &__expandable {
+    cursor: pointer;
+  }
+}
+
+.submission-spinner {
+  margin-top: 0.5rem;
+}
+
+.payment-details {
+  @media (max-width: 1473px) {
+    flex-direction: column;
+
+    .c-box__body--w-70 {
+      width: 100%;
+    }
+  }
+}
+
+.upload-buttons {
+
+  button {
+    font-size: $fs-md;
+    font-weight: 500;
+  }
+  @media (max-width: 1359px) {
+    button:last-child {
+      margin-top: 2rem;
+    }
+  }
+}

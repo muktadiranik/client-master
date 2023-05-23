@@ -1,0 +1,133 @@
+.c-input-icon {
+  position: relative;
+
+  &__element {
+    font-size: $fs-md;
+    position: absolute;
+    right: 1.5rem;
+    top: 28%;
+    color: $text-color-alt;
+    pointer-events: none;
+    transition: 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  .o-input {
+    padding-right: 3rem;
+  }
+
+  &--left .c-input-icon__element {
+    right: auto;
+    left: 11px;
+  }
+  &--left .o-input {
+    padding-right: 1.5rem;
+    padding-left: 5rem;
+  }
+
+  &--sm {
+    .c-input-icon__element {
+      font-size: $fs-sm;
+      min-width: 1.4rem;
+    }
+
+    .o-input {
+      padding-right: 37px;
+    }
+
+    &.c-input-icon--left .o-input {
+      padding-left: 37px;
+    }
+  }
+
+  &--padding-sm {
+    .c-input-icon__element {
+      right: 12px;
+    }
+
+    &.c-input-icon--left .c-input-icon__element {
+      left: 1rem;
+    }
+
+    .o-input {
+      padding-right: 2rem;
+    }
+
+    &.c-input-icon--left .o-input {
+      padding-left: 4rem;
+    }
+
+    &.c-input-icon--sm .o-input {
+      padding-right: 3.4rem;
+    }
+
+    &.c-input-icon--sm.c-input-icon--left .o-input {
+      padding-left: 3.4rem;
+    }
+  }
+
+  &--search {
+    &.c-input-icon--left .o-input {
+      padding-left: 4rem;
+    }
+  }
+
+  &.validate {
+    &-success {
+      &:after {
+        content: '\f00c';
+        color: $success-color;
+        font-family: $font-awesome;
+        font-weight: 300;
+        font-size: $fs-sm;
+        position: absolute;
+        right: -22px;
+      }
+    }
+    &-error {
+      &:after {
+        content: '\f00d';
+        color: $error-color;
+        font-family: $font-awesome;
+        font-weight: 300;
+        font-size: $fs-sm;
+        position: absolute;
+        right: -22px;
+      }
+    }
+  }
+}
+
+.c-clear-input {
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: $fs-sm;
+    color: $text-color-alt;
+    cursor: pointer;
+
+    &:hover {
+      color: $text-color-dark;
+    }
+  }
+
+  .o-input {
+    padding-right: 1rem;
+  }
+}

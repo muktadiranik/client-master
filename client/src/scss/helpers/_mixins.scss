@@ -1,0 +1,118 @@
+@mixin placeholderStyles {
+  ::-webkit-input-placeholder {
+    color: $text-color-alt;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  ::-moz-placeholder {
+    color: $text-color-alt;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  :-ms-input-placeholder {
+    color: $text-color-alt;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  :-moz-placeholder {
+    color: $text-color-alt;
+    text-align: left;
+    font-weight: 400;
+  }
+}
+
+@mixin placeholder-styles($color: $text-color-alt, $font-size: $fs-md, $font-weight: 400, $font-family: $primary-font) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+      family: $font-family;
+    }
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+      family: $font-family;
+    }
+    opacity: 1; // firefox fix
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+      family: $font-family;
+    }
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+      family: $font-family;
+    }
+    opacity: 1; // firefox fix
+  }
+}
+
+@mixin cesppa-scroll-bar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $border-color;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $border-color;
+  }
+}
+
+@mixin singleLine {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin hideInput {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+@mixin disableElement {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 1023px) {
+    @content
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content
+  }
+}

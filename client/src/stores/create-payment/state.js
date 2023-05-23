@@ -1,0 +1,25 @@
+export const InitialState = {
+  payment: undefined,
+  selectedTransactions: [],
+  referenceId: '',
+  notes: '',
+  transactionEditorEnabled: true,
+  transactions: [],
+  transactionsQuery: {
+    page: 1,
+    sortField: '',
+    sortOrder: '',
+    filterField: 'transactions',
+  },
+  userProfile: {},
+  loading: false,
+  toggleAllActive: false,
+  paymentMethod: 0,
+  btcWalletAddress: '',
+  ethWalletAddress: '',
+  paypalEmailAddress: '',
+  bankRoutingNumber: '',
+  bankAccountNumber: '',
+  bankType: undefined,
+}
+export default InitialState
